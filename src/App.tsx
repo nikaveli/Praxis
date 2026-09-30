@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useTextReveals } from './hooks/useTextReveals';
 import { useGlobalParallax } from './hooks/useGlobalParallax';
 import { useLocomotiveScroll } from './hooks/useLocomotiveScroll';
 import { BookingProvider, BookLink } from './components/Booking';
@@ -13,15 +13,7 @@ export function App({ path: originalPath = '/' }: { path?: string }) {
   const path = normalizePath(originalPath);
   useLocomotiveScroll(path);
   useGlobalParallax(path);
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-revealed'); observer.unobserve(e.target); } });
-    }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
-    // Resting content remains visible even when scripts or observers fail.
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, [path]);
+  useTextReveals(path);
   let content;
   switch (path) {
     case '/': content = <><Hero /><div id="values"><Values /></div><Community /><Mission /><Programs /><Schedule /><Coaches /><FreeClass /><ContactSection /></>; break;

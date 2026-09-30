@@ -1,5 +1,13 @@
 # Scroll motion
 
+## Site-wide text entrances
+
+`useTextReveals` mounts a shared GSAP entrance layer on all six pages and the footer. Headings, introductory labels, body copy, card text, benefits and contact details rise once as they enter the viewport. Desktop travel is 20px over 0.72s; at 700px and below it is 12px over 0.58s. A short, capped stagger and `power3.out` easing keep the pace restrained. Schedule day labels and complete sessions move together, preserving the relationship between times and class names.
+
+IntersectionObserver triggers the tweens against the real viewport, including native sticky section covers. GSAP interpolates a separate numeric value and writes the standalone CSS `translate` property, leaving the existing Osmo/Locomotive `transform` owners untouched. This replaces the earlier CSS `.is-revealed` wrapper animation, avoiding doubled entrances. No text is split, hidden, or made transparent; static HTML and unsupported browsers retain readable content. Navigation and booking controls remain stable. Keyboard focus immediately finishes a containing text group's motion, and reduced motion disables/reverts all text entrances, including when the preference changes during a visit.
+
+Validated September 30, 2026: 29 tests pass, along with TypeScript, the production build and static-output checks. Chrome checks covered initialization on all six routes at desktop and phone widths, visible in-progress translation, completed clean styles, retained parallax transforms, and no horizontal overflow (including a 320px homepage). Desktop and mobile schedule layouts were visually inspected. Mobile checks used browser viewport emulation, not a physical device.
+
 Updated September 30, 2026 from the supplied Osmo **Locomotive Smooth Scroll Setup** and **Global Parallax Setup**.
 
 ## Libraries and ownership
