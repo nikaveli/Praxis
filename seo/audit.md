@@ -89,7 +89,7 @@ See [content-briefs.md](content-briefs.md) for full briefs and an eight-week pla
 | Robots | Pass | Generated per environment; production advertises canonical sitemap |
 | Internal links and assets | Pass | Existing static checks pass; all declared local targets resolve in output |
 | Legacy redirect completeness | Warning | Current known routes retained; full old sitemap/Search Console export needed |
-| Error behavior | Prepared | Static hosting configured for a 404 page; verify response status on the deployed hostname |
+| Error behavior | Pass | A deployed nonexistent route returned HTTP 404; generated error page remains noindex |
 | HTTPS / mixed content | Pass in generated references | Site, vendor widget and map use HTTPS; final host redirect policy still needs launch verification |
 | Schema | Pass in local validation | JSON-LD parses and matches shared business/program/coach data; run external validators at launch |
 | Business hours / ratings | Intentionally omitted | No verified closing times or eligible review dataset; do not invent |
@@ -98,6 +98,8 @@ See [content-briefs.md](content-briefs.md) for full briefs and an eight-week pla
 | Core Web Vitals | Unmeasured | No field LCP, INP or CLS dataset or Lighthouse score was collected; do not infer a pass from build success |
 | Search Console / analytics | Not connected | Verification and real baselines are owner-managed launch tasks |
 | External destinations | Partial | Booking was tested without submission in prior browser checks; full external-link status crawl not performed |
+
+Live HTTP checks also confirmed that Cloudflare's default `/about` → `/about/` normalization uses **307**, not a permanent redirect. The destination and canonical agree. For confirmed changed legacy URLs and final-host aliases, use explicit permanent redirects at launch rather than treating this automatic normalization as a migration redirect.
 
 The academy schema uses `SportsActivityLocation`, a local-business subtype, with known name, address, phone, email, imagery and Instagram. A `WebSite` and page entity connect it to each document. Instructor `Person` and program `Service` nodes reflect visible copy. No Event markup is generated from recurring class times without actual dated event details; no opening/closing hours are inferred. [Google LocalBusiness guidance](https://developers.google.com/search/docs/appearance/structured-data/local-business).
 
