@@ -8,7 +8,7 @@ Updated September 30, 2026 from the supplied Osmo **Locomotive Smooth Scroll Set
 - GSAP 3.15 and ScrollTrigger handle text, complete program/class cards, and the two schedule grids through the supplied `data-parallax-*` attributes.
 - The supplied Global Parallax tween and breakpoint logic is retained in `src/animation/globalParallax.js`. Integration additions are ESM imports/export and returning its matchMedia handle for React cleanup; initialization runs after React mounts and fonts are ready.
 - Neither library transforms the other's targets or ancestors. Navigation, booking dialogs, and individual schedule days are not animation targets.
-- Both libraries are served locally by Vite; GSAP is included in the entry bundle so the in-app preview does not depend on a separate animation-module fetch. No demo images, fonts, or styling from the Osmo example were added.
+- Both libraries are served locally by Vite; GSAP and Locomotive are included in the entry bundle so the in-app preview does not depend on a separate animation-module fetch. No demo images, fonts, or styling from the Osmo example were added.
 
 ## Placements and values
 
@@ -16,10 +16,10 @@ Headings in the previously selected alternating editorial sections ease vertical
 
 - Home: academy/programs/instructor/location headings, program cards, schedule heading and panel; standalone academy and coach photography keeps Locomotive movement.
 - About: mission heading and its photo, plus the facility image.
-- Programs: overview/details headings, all program and class-format cards.
+- Programs: overview/details headings, all program and class-format cards; newcomer and open-training photos use Locomotive.
 - Instructors: section and free-class headings; individual portraits keep Locomotive movement.
-- Classes: schedule heading and panel, newcomer/free-class headings, class-format cards; newcomer photograph keeps Locomotive movement.
-- Contact: introduction and values headings.
+- Classes: schedule heading and panel, newcomer/free-class headings, class-format cards; newcomer and open-training photographs keep Locomotive movement.
+- Contact: introduction and values headings; the visitor-seating photo uses Locomotive.
 
 Each schedule moves as one panel, keeping times, day columns and borders together. No text is split into letters or hidden.
 

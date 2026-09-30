@@ -32,6 +32,8 @@ it('enables smooth scrolling on all six routes without competing for GSAP target
   for (const route of routes) {
     const view = render(<App path={route.path} />);
     await waitFor(() => expect(document.documentElement.classList.contains('praxis-motion')).toBe(true));
+    expect(view.container.querySelectorAll('[data-scroll]').length, route.path).toBeGreaterThan(0);
+    expect(scroll.create).toHaveBeenCalledTimes(routes.indexOf(route) + 1);
     expect(view.container.querySelector('[data-scroll][data-parallax]')).toBeNull();
     expect(view.container.querySelector('[data-parallax] [data-scroll]')).toBeNull();
     expect(view.container.querySelector('[data-scroll] [data-parallax]')).toBeNull();

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import type LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveScroll from 'locomotive-scroll';
 
-// Alternating editorial sections shared by the photo and content animation layers.
+// Alternating editorial sections for the content animation layer.
 export const motionSections: Record<string, string[]> = {
   '/': ['.community', '.programs', '.coaches', '.contact-section'],
   '/about/': ['.mission', '.facility-strip'],
@@ -11,23 +11,26 @@ export const motionSections: Record<string, string[]> = {
   '/contact/': ['.contact-intro', '.values'],
 };
 // GSAP owns text, complete cards and schedule blocks; Locomotive owns only these photos.
-const targets = '.community-picture, .mission-picture, .coach-photo, .owners-photo, .newcomer .split > .photo, .facility-strip > .photo';
+const photoTargets: Record<string, string> = {
+  '/': '.community-picture, .owners-photo',
+  '/about/': '.mission-picture, .facility-strip > .photo',
+  '/programs/': '.newcomer .split > .photo, .open-training > article > .photo',
+  '/instructors/': '.coach-photo',
+  '/praxis-classes/': '.newcomer .split > .photo, .open-training > article > .photo',
+  '/contact/': '.location-media > .photo',
+};
 
 export function useLocomotiveScroll(path: string) {
   useEffect(() => {
-    if (!motionSections[path] || !('IntersectionObserver' in window)) return;
+    if (!photoTargets[path] || !('IntersectionObserver' in window)) return;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const elements = motionSections[path].flatMap(selector =>
-      Array.from(document.querySelectorAll<HTMLElement>(`main ${selector}`)).flatMap(section => Array.from(section.querySelectorAll<HTMLElement>(targets)))
-    );
+    const elements = Array.from(document.querySelector('main')?.querySelectorAll<HTMLElement>(photoTargets[path]) ?? []);
     elements.forEach((element, index) => {
       element.setAttribute('data-scroll', '');
       element.setAttribute('data-scroll-speed', index % 2 ? '-0.015' : '0.025');
       element.setAttribute('data-scroll-offset', '0, 0');
     });
     let instance: LocomotiveScroll | undefined;
-    let disposed = false;
-    let generation = 0;
     let paused = false;
     const fallback = document.querySelector<HTMLDialogElement>('.booking-fallback');
     const syncBooking = () => {
@@ -44,13 +47,10 @@ export function useLocomotiveScroll(path: string) {
       document.documentElement.classList.remove('praxis-motion');
       elements.forEach(element => element.style.removeProperty('transform'));
     };
-    const update = async () => {
-      const current = ++generation;
+    const update = () => {
       destroy();
       if (preference.matches) return;
       try {
-        const { default: LocomotiveScroll } = await import('locomotive-scroll');
-        if (disposed || current !== generation || preference.matches) return;
         // Osmo / Locomotive v5 initialization; default native touch behavior.
         instance = new LocomotiveScroll();
         document.documentElement.classList.add('praxis-motion');
@@ -65,10 +65,8 @@ export function useLocomotiveScroll(path: string) {
     bookingObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     if (fallback) bookingObserver.observe(fallback, { attributes: true, attributeFilter: ['open'] });
     preference.addEventListener('change', update);
-    void update();
+    update();
     return () => {
-      disposed = true;
-      generation++;
       bookingObserver.disconnect();
       preference.removeEventListener('change', update);
       destroy();
