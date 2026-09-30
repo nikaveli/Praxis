@@ -24,6 +24,19 @@ Headings travel from 20% to -20% of their own height. Program and class-format c
 
 Each schedule moves as one panel, keeping times, day columns and borders together. No text is split into letters or hidden.
 
+## Alternating section covers
+
+`SectionFlow` preserves the original section order and adds opaque layers. Starting with the hero, every other section rests beneath the next section as it rises over it. Native CSS sticky positioning handles this independently of the existing photo/card animations; no scroll interception, spacer height, content duplication or GSAP pinning is added.
+
+- Home: values over hero, mission over community, schedule over programs, free-class invitation over coaches.
+- About: values over hero, community over mission, free-class invitation over facility photo.
+- Programs: programs over hero, class details over newcomer guidance.
+- Instructors: coaches over hero, free-class invitation over values.
+- Classes: schedule over hero, class details over newcomer guidance.
+- Contact: free-trial introduction over hero, values over location/contact.
+
+A ResizeObserver tracks section and header heights. A section taller than the viewport scrolls to its bottom before resting, preserving access to its full content. The final section remains in normal flow. Keyboard focus releases an underlay so its links can be scrolled into view. At widths below 768px, with reduced motion, or without measurement support, all layers remain in normal document flow.
+
 ## Accessibility and lifecycle
 
 - `data-parallax-disable="mobileLandscape"` uses the supplied breakpoint to disable GSAP parallax at 767px and below. Locomotive retains its default native touch behavior.
@@ -32,6 +45,6 @@ Each schedule moves as one panel, keeping times, day columns and borders togethe
 - The Gymdesk observer ignores unrelated animation-style changes.
 - Effect cleanup preserves static rendering and native scrolling if either animation library cannot initialize.
 
-Validation: 14 passing tests, TypeScript, production build, static routes/assets/anchors, real-browser initialization on all six routes with no overlapping animation owners or console errors, calendar entrance/settled transforms and aligned days, and mobile breakpoint reversion with a readable two-column schedule. Existing tests cover booking pause/resume and reduced-motion lifecycle. No test leads were submitted.
+Validation: 16 passing tests, TypeScript, production build, static routes/assets/anchors, real-browser initialization on all six routes with no overlapping animation owners or console errors, calendar transforms and aligned days, actual section-cover geometry on all six pages, preserved anchor navigation and keyboard focus recovery, and mobile breakpoint reversion with a readable two-column schedule. Existing tests cover booking pause/resume and reduced-motion lifecycle. No test leads were submitted.
 
 Sources: [Locomotive Scroll v5](https://scroll.locomotive.ca/docs/), [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), and the user-supplied Osmo resource.

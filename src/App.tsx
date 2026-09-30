@@ -3,6 +3,7 @@ import { useGlobalParallax } from './hooks/useGlobalParallax';
 import { useLocomotiveScroll } from './hooks/useLocomotiveScroll';
 import { BookingProvider, BookLink } from './components/Booking';
 import { Header, Footer } from './components/Layout';
+import { SectionFlow } from './components/SectionFlow';
 import { Hero, HeroReview } from './components/Hero';
 import { Values, Community, Mission, Programs, Schedule, Coaches, FreeClass, ContactSection, PageHero, Newcomer, ProgramDetails, Photo } from './components/Sections';
 import { photography } from './data/photography';
@@ -31,6 +32,6 @@ export function App({ path: originalPath = '/' }: { path?: string }) {
     case '/contact/': content = <><PageHero eyebrow="Contact Praxis" title={<>Your first class<br /><em>is free.</em></>} description={home.cta} photo={photography.contact.hero.name} alt={photography.contact.hero.alt} /><section className="section contact-intro" id="free-trial"><div className="container split"><div><p className="eyebrow">Ready to begin?</p><h2>Step onto<br /><em>the mats.</em></h2></div><div><p>{classes.cta}</p><div className="button-row"><BookLink /><a className="text-link" href={business.tel}>{business.phone} ↗</a></div><a className="text-link" href={`mailto:${business.email}`}>{business.email} ↗</a></div></div></section><ContactSection page /><Values /></>; break;
     default: content = <section className="section not-found"><div className="container"><p className="eyebrow">404 · Page not found</p><h1>Back to<br /><em>the mats.</em></h1><p>This page isn’t available. Find your next class or return home.</p><div className="button-row"><a className="button" href="/">Return home ↗</a><a className="text-link" href="/praxis-classes/">View class times ↗</a></div></div></section>;
   }
-  return <BookingProvider><Header path={path} />{path === '/design-review/' ? <HeroReview /> : <main id="content">{content}</main>}<Footer /></BookingProvider>;
+  return <BookingProvider><Header path={path} />{path === '/design-review/' ? <HeroReview /> : <main id="content"><SectionFlow key={path}>{content}</SectionFlow></main>}<Footer /></BookingProvider>;
 }
 export { routes };

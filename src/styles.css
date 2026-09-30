@@ -64,3 +64,15 @@ html.lenis{scroll-behavior:auto!important}
   .program-grid,.class-detail-grid{padding-block:80px}
   .schedule-grid{margin-block:55px}
 }
+
+/* Every other section rests while the next opaque section scrolls over it. */
+.section-flow{isolation:isolate}
+.section-layer{position:relative;display:flow-root;background:var(--cream)}
+@media(min-width:768px) and (prefers-reduced-motion:no-preference){
+  .section-flow[data-section-ready]>.section-layer[data-section-underlay]{
+    position:sticky;
+    top:min(var(--section-header),calc(100svh - var(--section-height)));
+  }
+  /* Keyboard focus can bring a covered section back into normal document flow. */
+  .section-flow[data-section-ready]>.section-layer[data-section-underlay]:has(:focus-visible){position:relative;top:auto}
+}
