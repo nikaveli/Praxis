@@ -31,7 +31,7 @@ The account already contained a GitHub-connected **Worker named `praxis`**. This
 - Static output: `dist` (configured in `wrangler.jsonc`).
 - Preview uses the Cloudflare workers.dev hostname. No custom domain or DNS changes are made.
 
-The preview deliberately returns `X-Robots-Tag: noindex, nofollow` via `public/_headers`. Canonicals and the sitemap point to the eventual live domain. At an explicitly approved domain launch, remove the preview noindex header and review DNS, canonical URLs and search indexing. Never connect the live domain merely to publish a preview.
+The preview deliberately returns `X-Robots-Tag: noindex, nofollow` via `public/_headers`. Canonicals and the sitemap point to the eventual live domain. Social-image URLs default to the working preview host; set `SITE_ORIGIN=https://prxsjiujitsu.com` for the eventual live build. At an explicitly approved domain launch, remove the preview noindex header and review DNS, canonical URLs and search indexing. Never connect the live domain merely to publish a preview.
 
 ## Verification
 

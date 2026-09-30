@@ -21,6 +21,7 @@ for (const [name, file] of Object.entries(assets)) {
     manifest[name].derivatives.push({ file: output, width: info.width, height: info.height, bytes: info.size });
   }
 }
+await sharp(`${source}/praxisGroup-scaled.jpg`).resize(1200,630,{fit:"cover",position:"centre"}).webp({quality:85}).toFile(`${out}/social.webp`);
 // Preserve the original logo pixels; crop only its surrounding blank margins.
 const logo = `${source}/IMG_1067-scaled.webp`;
 await sharp(logo).trim({ background: '#E9E8E3', threshold: 20 }).resize({ width: 1000 }).webp({ quality: 95 }).toFile(`${out}/logo.webp`);
