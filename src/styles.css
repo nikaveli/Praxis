@@ -29,6 +29,12 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal,[data-text-reveal]{opacity:1!important;translate:none!important}.hero-media video{display:none}}
 
 /* Distinct, subject-matched photography across the public pages. */
+:root{--photo-radius:clamp(12px,1.4vw,20px)}
+main .photo{border-radius:var(--photo-radius)}
+.page-hero>.photo,.hero .photo{border-radius:0}
+.community-picture,.program-image,.coach-photo,.kids-detail-photo,.facility-strip{border-radius:var(--photo-radius);overflow:hidden}
+main .kids-detail-photo>.photo{border-bottom-left-radius:0;border-bottom-right-radius:0}
+@media(max-width:700px){.mission-picture .experience{border-bottom-left-radius:var(--photo-radius)}}
 .coaches-home .coaches-overview{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
 .coaches-home .owners-photo{height:auto;aspect-ratio:8/5;object-fit:contain;background:#111}
 .coaches-home .coach-grid{grid-template-columns:1fr;gap:32px}
