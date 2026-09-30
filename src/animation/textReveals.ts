@@ -29,6 +29,7 @@ export function mountTextReveals(roots: ParentNode[]) {
   }]));
   const active = new Map<HTMLElement, gsap.core.Tween>();
   const compact = window.matchMedia('(max-width: 700px)');
+  const offsets = new Map(targets.map(element => [element, { value: compact.matches ? 8 : 14 }]));
   let disposed = false;
 
   const restore = (element: HTMLElement) => {
@@ -44,27 +45,30 @@ export function mountTextReveals(roots: ParentNode[]) {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
       const element = entry.target as HTMLElement;
+      if (element.dataset.textReveal !== 'pending') continue;
       observer.unobserve(element);
       if (element.contains(document.activeElement)) { restore(element); continue; }
-      const offset = { value: compact.matches ? 12 : 20 };
+      const offset = offsets.get(element)!;
       element.dataset.textReveal = 'running';
       element.style.willChange = 'translate';
-      element.style.translate = `0 ${offset.value}px`;
       // Tween a separate value: CSSPlugin's transform parsing must never take
       // ownership of the transforms used by Osmo / Locomotive parallax.
       active.set(element, gsap.to(offset, {
         value: 0,
-        duration: compact.matches ? 0.58 : 0.72,
-        delay: Math.min(order++, 3) * (compact.matches ? 0.035 : 0.045),
-        ease: 'power3.out',
+        duration: compact.matches ? 0.5 : 0.6,
+        delay: Math.min(order++, 2) * 0.025,
+        ease: 'power2.out',
         onUpdate: () => { element.style.translate = `0 ${offset.value}px`; },
         onComplete: () => restore(element),
       }));
     }
-  }, { threshold: 0, rootMargin: '0px 0px -5% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 24px 0px' });
 
   targets.forEach(element => {
     element.dataset.textReveal = 'pending';
+    // Prepare before observation/paint. Moving resting text down in the
+    // observer callback caused a visible backward jump on every scroll reveal.
+    element.style.translate = `0 ${offsets.get(element)!.value}px`;
     observer.observe(element);
   });
   const focus = (event: FocusEvent) => {

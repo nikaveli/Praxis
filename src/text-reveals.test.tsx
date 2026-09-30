@@ -54,8 +54,11 @@ it.each([false, true])('preserves parallax transforms, visible copy, and cleans 
   const heading = root.querySelector('h2')!;
   const stop = mountTextReveals([root]);
   expect(heading.style.opacity).toBe('');
+  const preparedPosition = heading.style.translate;
+  expect(preparedPosition).toBe(`0 ${mobile ? 8 : 14}px`);
   viewport.enter(heading);
-  expect(heading.style.translate).toBe(`0 ${mobile ? 12 : 20}px`);
+  // Entering view must not push already-visible text downward.
+  expect(heading.style.translate).toBe(preparedPosition);
   expect(heading.style.transform).toBe('translateY(6px)');
   stop();
   expect(heading.style.translate).toBe('');

@@ -9,13 +9,14 @@ const animation = vi.hoisted(() => ({ init: vi.fn(), revert: vi.fn() }));
 vi.mock('./animation/globalParallax.js', () => ({ initGlobalParallax: () => { animation.init(); return { revert: animation.revert }; } }));
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.clearAllMocks(); });
 
-it('assigns text and card motion without changing page content or separating calendar days', () => {
+it('keeps parallax on cards and calendars without a second animation on headings', () => {
   for (const route of routes) {
     const root = document.createElement('div');
     root.innerHTML = renderToStaticMarkup(<App path={route.path} />);
     const before = root.textContent;
     const elements = prepareParallax(root, route.path);
-    expect(elements.length).toBeGreaterThan(0);
+    expect(elements.length).toBe(root.querySelectorAll('.program-card, .class-detail, .schedule-grid').length);
+    expect(root.querySelectorAll('h1[data-parallax], h2[data-parallax], h3[data-parallax], h4[data-parallax]')).toHaveLength(0);
     expect(root.textContent).toBe(before);
     expect(root.querySelectorAll('.schedule-day [data-parallax], .schedule-day[data-parallax]')).toHaveLength(0);
     for (const calendar of root.querySelectorAll('.schedule-grid')) {

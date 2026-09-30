@@ -2,7 +2,9 @@
 
 ## Site-wide text entrances
 
-`useTextReveals` mounts a shared GSAP entrance layer on all six pages and the footer. Headings, introductory labels, body copy, card text, benefits and contact details rise once as they enter the viewport. Desktop travel is 20px over 0.72s; at 700px and below it is 12px over 0.58s. A short, capped stagger and `power3.out` easing keep the pace restrained. Schedule day labels and complete sessions move together, preserving the relationship between times and class names.
+`useTextReveals` mounts a shared GSAP entrance layer on all six pages and the footer. Headings, introductory labels, body copy, card text, benefits and contact details rise once as they enter the viewport. Desktop travel is 14px over 0.6s; at 700px and below it is 8px over 0.5s. Stagger is capped at 50ms with `power2.out` easing. Schedule day labels and complete sessions move together, preserving the relationship between times and class names.
+
+The entrance offset is prepared in a layout effect before observation, with a 24px viewport lead-in. The observer starts movement toward the resting position without first shifting visible text downward. Headings no longer receive a second, scroll-scrubbed parallax transform. These changes address the visible jump and competing motion reported during scrolling. Duplicate observer deliveries cannot restart a running or completed entrance.
 
 IntersectionObserver triggers the tweens against the real viewport, including native sticky section covers. GSAP interpolates a separate numeric value and writes the standalone CSS `translate` property, leaving the existing Osmo/Locomotive `transform` owners untouched. This replaces the earlier CSS `.is-revealed` wrapper animation, avoiding doubled entrances. No text is split, hidden, or made transparent; static HTML and unsupported browsers retain readable content. Navigation and booking controls remain stable. Keyboard focus immediately finishes a containing text group's motion, and reduced motion disables/reverts all text entrances, including when the preference changes during a visit.
 
@@ -13,22 +15,22 @@ Updated September 30, 2026 from the supplied Osmo **Locomotive Smooth Scroll Set
 ## Libraries and ownership
 
 - `locomotive-scroll` 5.0.1 handles smooth wheel scrolling and selected standalone photographs through the original `data-scroll`, `data-scroll-speed`, and `data-scroll-offset` attributes.
-- GSAP 3.15 and ScrollTrigger handle text, complete program/class cards, and the two schedule grids through the supplied `data-parallax-*` attributes.
+- GSAP 3.15 and ScrollTrigger handle complete program/class cards and the two schedule grids through the supplied `data-parallax-*` attributes. Text entrances have their own single GSAP owner.
 - The supplied Global Parallax tween and breakpoint logic is retained in `src/animation/globalParallax.js`. Integration additions are ESM imports/export and returning its matchMedia handle for React cleanup; initialization runs after React mounts and fonts are ready.
-- Neither library transforms the other's targets or ancestors. Navigation, booking dialogs, and individual schedule days are not animation targets.
+- Locomotive photo targets and ScrollTrigger card/calendar targets remain separate. Text inside cards can enter independently through the standalone `translate` property; no heading has both a text entrance and its own scrubbed transform. Navigation and booking dialogs remain still.
 - Both libraries are served locally by Vite; GSAP and Locomotive are included in the entry bundle so the in-app preview does not depend on a separate animation-module fetch. No demo images, fonts, or styling from the Osmo example were added.
 
 ## Placements and values
 
 The supplied [Locomotive demo](https://osmo-locomotive-smooth-scroll.webflow.io/) uses continuous movement at different speeds, including photo/card speeds of `0.1` and `-0.05`. Praxis now uses those values for selected standalone photographs. The default Locomotive constructor and smooth-wheel behavior remain unchanged.
 
-Headings travel from 20% to -20% of their own height. Program and class-format cards use opposing start/end pairs (12/-12, -6/6, -12/12). Complete schedule panels travel from 8% to -8%. The supplied GSAP resource keeps its original `scrub: true` approach, now spanning the full viewport passage (`top bottom` to `bottom top`) instead of stopping at `top 35%`. Card grids and schedules have additional vertical clearance; the facility image has viewport-relative overscan to avoid exposing edges.
-- Home: academy/programs/instructor/location headings, program cards, schedule heading and panel; standalone academy and coach photography keeps Locomotive movement.
-- About: mission heading and its photo, plus the facility image.
-- Programs: overview/details headings, all program and class-format cards; newcomer and open-training photos use Locomotive.
-- Instructors: section and free-class headings; individual portraits keep Locomotive movement.
-- Classes: schedule heading and panel, newcomer/free-class headings, class-format cards; newcomer and open-training photographs keep Locomotive movement.
-- Contact: introduction and values headings; the visitor-seating photo uses Locomotive.
+Program and class-format cards use opposing start/end pairs (12/-12, -6/6, -12/12). Complete schedule panels travel from 8% to -8%. The supplied GSAP resource keeps its original `scrub: true` approach, spanning the full viewport passage (`top bottom` to `bottom top`). Card grids and schedules have additional vertical clearance; the facility image has viewport-relative overscan to avoid exposing edges.
+- Home: program cards and schedule panel; standalone academy and coach photography keeps Locomotive movement.
+- About: mission photo and facility image.
+- Programs: program and class-format cards; newcomer and open-training photos use Locomotive.
+- Instructors: individual portraits keep Locomotive movement.
+- Classes: schedule panel and class-format cards; newcomer and open-training photographs keep Locomotive movement.
+- Contact: the visitor-seating photo uses Locomotive.
 
 Each schedule moves as one panel, keeping times, day columns and borders together. No text is split into letters or hidden.
 
@@ -43,7 +45,7 @@ Each schedule moves as one panel, keeping times, day columns and borders togethe
 - Classes: schedule over hero, class details over newcomer guidance.
 - Contact: free-trial introduction over hero, values over location/contact.
 
-A ResizeObserver tracks section and header heights. A section taller than the viewport scrolls to its bottom before resting, preserving access to its full content. The final section remains in normal flow. Keyboard focus releases an underlay so its links can be scrolled into view. Section covers work at all viewport widths, including phones with native touch scrolling. With reduced motion or without measurement support, all layers remain in normal document flow. The separate GSAP text/card parallax still retains its original mobile breakpoint.
+A ResizeObserver tracks section and header heights. A section taller than the viewport scrolls to its bottom before resting, preserving access to its full content. The final section remains in normal flow. Keyboard focus releases an underlay so its links can be scrolled into view. Section covers work at all viewport widths, including phones with native touch scrolling. With reduced motion or without measurement support, all layers remain in normal document flow. The separate GSAP card/calendar parallax retains its original mobile breakpoint.
 
 ## Footer parallax
 

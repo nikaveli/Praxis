@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { mountTextReveals } from '../animation/textReveals';
 
 export function useTextReveals(path: string) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!('IntersectionObserver' in window)) return;
     const roots = Array.from(document.querySelectorAll('main, .site-footer'));
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
