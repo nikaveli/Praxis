@@ -33,6 +33,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
       const trigger = document.querySelector<HTMLElement>(triggerSelector);
       if (popup && !popup.hasAttribute('data-accessible')) {
         popup.setAttribute('data-accessible', 'true');
+        popup.setAttribute('data-lenis-prevent', '');
         popup.setAttribute('role', 'dialog');
         popup.setAttribute('aria-modal', 'true');
         popup.setAttribute('aria-label', 'Sign up for a free trial');
@@ -71,7 +72,10 @@ export function BookingProvider({ children }: { children: ReactNode }) {
       } else restore();
     };
     synchronize.current = sync;
-    const observer = new MutationObserver(sync);
+    // Ignore animation transforms outside the provider popup.
+    const observer = new MutationObserver(records => {
+      if (records.some(record => record.type === 'childList' || (record.target instanceof Element && record.target.closest(popupSelector)))) sync();
+    });
     observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
     const keyboard = (event: KeyboardEvent) => {
       if (!active || !popup) return;
@@ -128,7 +132,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
   const close = () => { pending.current = false; clearTimeout(timer.current); clearInterval(polling.current); fallback.current?.close(); setStatus('idle'); opener.current?.focus(); };
   return <BookingContext.Provider value={request}>
     {children}
-    <dialog className="booking-fallback" ref={fallback} aria-labelledby="booking-title" onCancel={close}>
+    <dialog data-lenis-prevent="" className="booking-fallback" ref={fallback} aria-labelledby="booking-title" onCancel={close}>
       <button className="dialog-close" onClick={close} aria-label="Close booking dialog">×</button>
       <p className="eyebrow">Your first class is free</p>
       <h2 id="booking-title">Let’s get you<br />on the mats.</h2>

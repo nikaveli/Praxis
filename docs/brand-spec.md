@@ -7,7 +7,7 @@
 - Type rhythm: fluid 64–150px hero, 44–88px section headings, 18px body, 12px tracked labels.
 - Layout: 1280px maximum content width; 24px mobile gutters; 96–120px desktop section spacing; square corners; thin rules; alternating cream and black sections.
 - Signature: full-width academy video, huge condensed headline, numbered green values band, real training photography and editorial coach portraits.
-- Motion: short translate/opacity reveals; no scroll hijacking; reduced-motion stills; visible video pause control.
+- Motion: Locomotive v5 smooth wheel scrolling with gentle parallax in alternating sections; native touch behavior; reduced-motion stills; visible video pause control. See [scroll motion](scroll-motion.md).
 - Original logo is cropped to remove excess margin only; no redrawing or proportional distortion.
 
 ## Asset map

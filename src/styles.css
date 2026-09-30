@@ -48,3 +48,9 @@
 .page-hero>.photo[src*="entrance-"]{object-position:50% 35%}
 @media(max-width:900px){.coaches-home .coaches-overview{gap:36px;grid-template-columns:1fr}.coaches-home .owners-photo{max-width:720px;margin-inline:auto}.coaches-home .coach-grid{grid-template-columns:1fr 1fr;gap:30px}.coaches-home .coach+.coach{border:0;padding:0}}
 @media(max-width:700px){.coaches-home .coach-grid{grid-template-columns:1fr}.coaches-home .coach+.coach{border-top:1px solid var(--line);padding-top:28px}.coaches-home .coach-copy>p:not(.eyebrow){font-size:15px}.training-format{height:280px;padding:30px}.training-format span:first-child{font-size:110px}}
+
+/* Locomotive v5 owns wheel interpolation; retain native touch and reduced motion. */
+html.lenis{scroll-behavior:auto!important}
+.praxis-motion [data-scroll-speed]{will-change:transform}
+.praxis-motion .facility-strip>.photo{scale:1.12}
+@media(prefers-reduced-motion:reduce){[data-scroll-speed]{transform:none!important;will-change:auto!important}.facility-strip>.photo{scale:1!important}}

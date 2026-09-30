@@ -6,6 +6,7 @@ import '@fontsource/barlow/latin-600.css';
 import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/barlow-condensed/latin-600-italic.css';
 import '@fontsource/barlow-condensed/latin-700.css';
+import 'locomotive-scroll/locomotive-scroll.css';
 import './styles.css';
 const root = document.getElementById('root')!;
 const app = <App path={location.pathname} />;
