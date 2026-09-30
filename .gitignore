@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.ssr/
+.wrangler/
+Assets/
+.DS_Store
+.env*
+*.log
+coverage/
+artifacts/

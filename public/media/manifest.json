@@ -1,0 +1,307 @@
+{
+  "community": {
+    "source": "DSC00453-scaled.jpg",
+    "width": 2048,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "community-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 48842
+      },
+      {
+        "file": "community-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 137078
+      },
+      {
+        "file": "community-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 241440
+      }
+    ]
+  },
+  "mission": {
+    "source": "DSC00397-scaled.jpg",
+    "width": 2048,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "mission-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 37950
+      },
+      {
+        "file": "mission-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 95806
+      },
+      {
+        "file": "mission-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 160720
+      }
+    ]
+  },
+  "adults": {
+    "source": "DSC00444-scaled.jpg",
+    "width": 2048,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "adults-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 43834
+      },
+      {
+        "file": "adults-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 125490
+      },
+      {
+        "file": "adults-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 213304
+      }
+    ]
+  },
+  "kids": {
+    "source": "DSC00378-scaled.jpg",
+    "width": 2048,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "kids-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 37240
+      },
+      {
+        "file": "kids-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 100824
+      },
+      {
+        "file": "kids-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 180398
+      }
+    ]
+  },
+  "women": {
+    "source": "DSC00465-scaled.jpg",
+    "width": 2048,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "women-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 38192
+      },
+      {
+        "file": "women-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 108398
+      },
+      {
+        "file": "women-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 198520
+      }
+    ]
+  },
+  "darien": {
+    "source": "DSC06098-scaled.webp",
+    "width": 1707,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "darien-640.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 45496
+      },
+      {
+        "file": "darien-1280.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 139932
+      },
+      {
+        "file": "darien-1920.webp",
+        "width": 1707,
+        "height": 2560,
+        "bytes": 240252
+      }
+    ]
+  },
+  "nikki": {
+    "source": "DSC06066-scaled.webp",
+    "width": 1707,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "nikki-640.webp",
+        "width": 640,
+        "height": 960,
+        "bytes": 48160
+      },
+      {
+        "file": "nikki-1280.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 138956
+      },
+      {
+        "file": "nikki-1920.webp",
+        "width": 1707,
+        "height": 2560,
+        "bytes": 238920
+      }
+    ]
+  },
+  "team": {
+    "source": "praxisGroup-scaled.jpg",
+    "width": 2560,
+    "height": 1639,
+    "derivatives": [
+      {
+        "file": "team-640.webp",
+        "width": 640,
+        "height": 410,
+        "bytes": 30276
+      },
+      {
+        "file": "team-1280.webp",
+        "width": 1280,
+        "height": 820,
+        "bytes": 86506
+      },
+      {
+        "file": "team-1920.webp",
+        "width": 1920,
+        "height": 1229,
+        "bytes": 156800
+      }
+    ]
+  },
+  "facility": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "facility-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 47984
+      },
+      {
+        "file": "facility-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 170174
+      },
+      {
+        "file": "facility-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 343478
+      }
+    ]
+  },
+  "exterior": {
+    "source": "Praxis_Jiu_Jitsu_Academy_exterior.jpg",
+    "width": 4016,
+    "height": 3012,
+    "derivatives": [
+      {
+        "file": "exterior-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 35406
+      },
+      {
+        "file": "exterior-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 141504
+      },
+      {
+        "file": "exterior-1920.webp",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 350406
+      }
+    ]
+  },
+  "technique": {
+    "source": "DSC00243 (1).jpg",
+    "width": 1638,
+    "height": 2048,
+    "derivatives": [
+      {
+        "file": "technique-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 48330
+      },
+      {
+        "file": "technique-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 159328
+      },
+      {
+        "file": "technique-1920.webp",
+        "width": 1638,
+        "height": 2048,
+        "bytes": 240440
+      }
+    ]
+  },
+  "logo": {
+    "source": "IMG_1067-scaled.webp",
+    "width": 1000,
+    "height": 350
+  },
+  "pinning": {
+    "source": "DSC00227.webp",
+    "width": 1638,
+    "height": 2048,
+    "derivatives": [
+      {
+        "file": "pinning-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 59172
+      },
+      {
+        "file": "pinning-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 218728
+      },
+      {
+        "file": "pinning-1920.webp",
+        "width": 1638,
+        "height": 2048,
+        "bytes": 393508
+      }
+    ]
+  }
+}
