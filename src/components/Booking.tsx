@@ -38,6 +38,9 @@ export function BookingProvider({ children }: { children: ReactNode }) {
         popup.setAttribute('aria-modal', 'true');
         popup.setAttribute('aria-label', 'Sign up for a free trial');
         popup.tabIndex = -1;
+        for (const [name, purpose] of [['name', 'name'], ['email', 'email'], ['phone', 'tel']]) {
+          popup.querySelector<HTMLInputElement>(`input[name="${name}"]`)?.setAttribute('autocomplete', purpose);
+        }
         const close = popup.querySelector<HTMLElement>('.close');
         if (close) {
           close.setAttribute('role', 'button');
@@ -53,6 +56,10 @@ export function BookingProvider({ children }: { children: ReactNode }) {
         const call = document.createElement('a'); call.href = business.tel; call.textContent = business.phone;
         const email = document.createElement('a'); email.href = `mailto:${business.email}`; email.textContent = 'Email us';
         help.append(call, ' · ', email); popup.append(help);
+        const nextStep = document.createElement('p');
+        nextStep.className = 'booking-next-step';
+        nextStep.textContent = 'Send your details and our team will contact you to arrange your free first class.';
+        popup.querySelector('form')?.prepend(nextStep);
       }
       if (trigger && popup && window.MARforms?.started && pending.current) {
         pending.current = false;

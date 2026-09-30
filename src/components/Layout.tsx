@@ -12,6 +12,7 @@ export function Header({ path }: { path: string }) {
   const nav = useRef<HTMLElement>(null);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      if (document.body.classList.contains('booking-open') || document.querySelector('dialog[open]')) return;
       if (e.key === 'Escape' && open) { setOpen(false); menu.current?.focus(); }
     };
     document.addEventListener('keydown', handler);
@@ -19,15 +20,18 @@ export function Header({ path }: { path: string }) {
   }, [open]);
   return <>
     <a className="skip-link" href="#content">Skip to content</a>
-    <header className="site-header">
+    <header className="site-header" onBlur={e => {
+      const next = e.relatedTarget;
+      if (!e.currentTarget.contains(next) && !(next instanceof Element && next.closest('dialog,[role="dialog"]'))) setOpen(false);
+    }}>
       <div className="header-inner">
         <Logo />
-        <nav ref={nav} id="primary-nav" aria-label="Main navigation" className={open ? 'nav is-open' : 'nav'}>
+        <button ref={menu} className={`menu-toggle ${open ? 'is-open' : ''}`} aria-controls="primary-nav" aria-expanded={open} onClick={() => setOpen(!open)} aria-label={open ? 'Close navigation' : 'Open navigation'}><span /><span /></button>
+        <nav ref={nav} id="primary-nav" data-lenis-prevent="" aria-label="Main navigation" className={open ? 'nav is-open' : 'nav'}>
           {routes.map(r => <a key={r.path} href={r.path} aria-current={path === r.path ? 'page' : undefined} onClick={() => setOpen(false)}>{r.label}</a>)}
           <BookLink className="button mobile-nav-book" />
         </nav>
-        <BookLink className="button header-book" />
-        <button ref={menu} className={`menu-toggle ${open ? 'is-open' : ''}`} aria-controls="primary-nav" aria-expanded={open} onClick={() => setOpen(!open)} aria-label={open ? 'Close navigation' : 'Open navigation'}><span /><span /></button>
+        <BookLink className="button header-book"><span className="booking-label booking-label-full">Book a free class</span><span className="booking-label booking-label-short">Free class</span></BookLink>
       </div>
     </header>
   </>;

@@ -6,6 +6,8 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { App } from './App';
 import { BookingProvider, BookLink, gymdesk } from './components/Booking';
 import { Hero } from './components/Hero';
+import { Header } from './components/Layout';
+import userEvent from '@testing-library/user-event';
 import { classes, home, coaches, programs, values, schedule, routes, classDetails, openTraining } from './data/content';
 
 const textOf = (path: string) => {
@@ -13,6 +15,24 @@ const textOf = (path: string) => {
   return doc.body.textContent ?? '';
 };
 const normalize = (s: string) => s.replace(/\s+/g,' ').trim();
+
+it('puts the expanded navigation after its toggle and closes it before focus enters main content', async () => {
+  const user = userEvent.setup();
+  const view = render(<><Header path="/" /><main><button>After navigation</button></main></>);
+  const menu = screen.getByRole('button', { name: 'Open navigation' });
+  menu.focus();
+  await user.keyboard('{Enter}');
+  document.body.classList.add('booking-open');
+  await user.keyboard('{Escape}');
+  expect(menu.getAttribute('aria-expanded')).toBe('true');
+  document.body.classList.remove('booking-open');
+  await user.tab();
+  expect(document.activeElement).toBe(screen.getByRole('link', { name: /^Home$/ }));
+  for (let i = 0; i < 8; i++) await user.tab();
+  expect(document.activeElement).toBe(screen.getByRole('button', { name: 'After navigation' }));
+  expect(menu.getAttribute('aria-expanded')).toBe('false');
+  view.unmount();
+});
 
 it('shows a still image and avoids playback when reduced motion is requested', () => {
   const original = window.matchMedia;
@@ -89,7 +109,7 @@ describe('booking integration', () => {
     render(<BookingProvider><BookLink>Header booking</BookLink><BookLink>Program booking</BookLink></BookingProvider>);
     const trigger=document.createElement('a');trigger.className='maonrails-lead-form-button';trigger.setAttribute('attr-id','8023');
     const click=vi.fn();trigger.addEventListener('click',click);
-    const popup=document.createElement('div');popup.className='maonrails-popup';popup.setAttribute('attr-id','8023');popup.style.display='none';popup.innerHTML='<span class="close"></span><input name="name"><button>Get in touch</button>';
+    const popup=document.createElement('div');popup.className='maonrails-popup';popup.setAttribute('attr-id','8023');popup.style.display='none';popup.innerHTML='<span class="close"></span><form><input name="name"><input name="email" type="email"><input name="phone" type="tel"><button>Get in touch</button></form>';
     await act(async()=>{document.body.append(trigger,popup);});
     fireEvent.click(screen.getByText('Header booking'));fireEvent.click(screen.getByText('Program booking'));
     expect(click).toHaveBeenCalledTimes(2);
@@ -97,6 +117,8 @@ describe('booking integration', () => {
     expect(popup.getAttribute('aria-modal')).toBe('true');
     expect(popup.querySelector('.close')?.getAttribute('aria-label')).toBe('Close booking form');
     expect(popup.querySelector('a[href="mailto:info@prxsjiujitsu.com"]')).not.toBeNull();
+    for (const [name, purpose] of [['name', 'name'], ['email', 'email'], ['phone', 'tel']]) expect(popup.querySelector(`input[name="${name}"]`)?.getAttribute('autocomplete')).toBe(purpose);
+    expect(popup.querySelector('.booking-next-step')?.textContent).toContain('contact you to arrange');
   });
   it('does not open a late-loading form after a visitor cancels', async () => {
     render(<BookingProvider><BookLink /></BookingProvider>);

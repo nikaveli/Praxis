@@ -34,7 +34,7 @@ export function Hero({ variant = 'cinematic', preview = false }: { variant?: Her
       <h1>Jiu Jitsu.<br /><em>All levels.</em></h1>
       <div className="hero-bottom-copy"><p>{home.intro}</p><div className="button-row"><BookLink className="button button-cream" /><a className="hero-explore" href="/programs/">Explore programs <span aria-hidden="true">↗</span></a></div></div>
     </div>
-    <div className="container hero-foot"><a href={preview ? "/#values" : "#values"} className="scroll-hint">Scroll to discover <span aria-hidden="true">↓</span></a><span className="hero-side-label">Black belt founded · Family owned</span>{!reduced && !preview && <button className="video-toggle" onClick={toggle} aria-label={playing ? 'Pause background video' : 'Play background video'}><span aria-hidden="true">{playing ? 'Ⅱ' : '▷'}</span>{playing ? 'Pause film' : 'Play film'}</button>}</div>
+    <div className="container hero-foot"><a href={preview ? "/#values" : "#values"} className="scroll-hint">Scroll to discover <span aria-hidden="true">↓</span></a><span className="hero-side-label">Black belt founded · Family owned</span>{!reduced && !preview && <button className="video-toggle" onClick={toggle}><span aria-hidden="true">{playing ? 'Ⅱ' : '▷'}</span>{playing ? 'Pause film' : 'Play film'}</button>}</div>
   </section>;
 }
 
