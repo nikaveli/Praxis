@@ -24,13 +24,13 @@ it('shows a still image and avoids playback when reduced motion is requested', (
 });
 
 describe('migration acceptance', () => {
-  it('preserves every existing homepage paragraph', () => {
+  it('renders every approved homepage paragraph', () => {
     const text = normalize(textOf('/'));
     for (const paragraph of [home.intro, home.community, ...home.mission, home.mats, home.programIntro, home.scheduleIntro, home.cta, ...values.map(v=>v.text), ...programs.map(p=>p.text), ...coaches.map(c=>c.bio)]) {
       expect(text).toContain(normalize(paragraph));
     }
   });
-  it('preserves the full live Classes page including Saturday', () => {
+  it('renders the approved Classes content including Saturday', () => {
     const text = normalize(textOf('/praxis-classes/'));
     for (const paragraph of [classes.intro, classes.scheduleIntro, classes.start, classes.programsIntro, ...classes.kids, ...classes.physical, ...classes.life, ...classDetails.flatMap(c=>[c.text,c.focus]), openTraining.friday, ...openTraining.saturday, classes.cta]) expect(text).toContain(normalize(paragraph));
   });

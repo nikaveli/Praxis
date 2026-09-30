@@ -7,27 +7,27 @@ export const business = {
   directions: 'https://www.google.com/maps/search/?api=1&query=Praxis+Jiu+Jitsu+Academy+965+US+550+Bernalillo+NM',
 };
 export const home = {
-  headline: 'Forge Your Best Self',
-  intro: 'High-level instruction in an environment built on respect, consistency, and genuine care.',
-  community: 'Kids and adults. First-timers and black belts. Everyone on these mats started with a single class — and everyone here remembers what that felt like.',
+  headline: 'Jiu Jitsu. All levels.',
+  intro: 'Adult and kids Jiu Jitsu in Bernalillo. Learn the fundamentals, develop your technique, and train in Gi, No-Gi, and beginner classes.',
+  community: 'Praxis is a family-owned Jiu Jitsu academy for kids and adults, from new students to experienced grapplers. Our classes combine instruction, drills, and partner practice, with an emphasis on technique and respect for your training partners.',
   mission: [
-    "Praxis Jiu Jitsu was founded on a simple belief: the best academies don't just teach technique — they build people. We created a space where students aren't just training, they're growing.",
-    "Whether you're stepping on the mats for the very first time or you're a seasoned competitor, you belong here. Our curriculum is built around fundamentals, problem-solving, and the kind of intentional practice that creates lasting improvement.",
+    "Our goal is to teach effective Jiu Jitsu through clear instruction and consistent practice. We focus on fundamental positions, sound technique, and understanding how to apply what you learn.",
+    "Beginners develop a foundation in movement and control. Experienced students refine their technique and work through more complex positions. Across every class, we emphasize problem-solving, controlled practice, and steady improvement.",
   ],
-  mats: 'Our academy is built on a professional Floating platform Jiu Jitsu Mat System, not a basic mat-on-concrete setup. This platform is designed to absorb impact, reduce stress on the joints, and create a safer, more comfortable training surface for students of all levels. It allows athletes to train harder, longer, and with more confidence while giving our facility a cleaner, more professional feel that separates us from the average jiu jitsu gym.',
-  programIntro: 'From your very first class to competition prep — we have a path built for you.',
+  mats: 'The academy uses a professional floating-platform Jiu Jitsu mat system. The platform is designed to absorb impact and reduce stress on the joints, providing a more comfortable surface for drills, takedowns, and live training.',
+  programIntro: 'Adult, kids, and women’s programs, with classes for beginners and experienced students.',
   scheduleIntro: 'Monday through Saturday at 965 US-550, Suite E, Bernalillo NM. Your first class is always free.',
-  cta: 'No experience needed. No commitment required. Just show up.',
+  cta: 'Try a free class. No previous experience or membership commitment required.',
 };
 export const values = [
-  { name: 'Respect', text: 'Every student matters. Every journey is honored — on and off the mats.' },
-  { name: 'Consistency', text: 'Progress is earned through dedication. We show up, so our students can too.' },
-  { name: 'Community', text: 'A family-centered gym where growth is a shared experience, not a solo grind.' },
+  { name: 'Respect', text: 'Train with control, follow instruction, and respect your training partners.' },
+  { name: 'Consistency', text: 'Build your skills through regular classes, focused drilling, and practice.' },
+  { name: 'Community', text: 'A family-owned academy for kids and adults. All experience levels are welcome.' },
 ];
 export const programs = [
-  { name: 'Adult BJJ', image: 'adults', alt: 'Two adult students rolling during a Praxis Jiu Jitsu class', text: 'Our flagship program. Build functional grappling skills, sharpen your problem-solving on the mats, and train alongside a community that genuinely has your back.' },
-  { name: 'Kids BJJ', image: 'kids', alt: 'Young students drilling takedowns while a coach supervises at Praxis Jiu Jitsu', text: 'Structured, fun, and confidence-building. Our kids program instills discipline, respect, and real self-defense skills in a safe, encouraging atmosphere.' },
-  { name: "Women's BJJ", image: 'women', alt: 'Two women training together under the Praxis Jiu Jitsu Academy banner', text: 'A dedicated space for women to train, grow, and build real self-defense skills. Coach Nikki brings 10+ years of expertise and a warm, empowering energy to every class.' },
+  { name: 'Adult BJJ', image: 'adults', alt: 'Two adult students rolling during a Praxis Jiu Jitsu class', text: 'Learn positions, escapes, and submissions through technical instruction and partner practice. Beginner, Gi, and No-Gi classes offer options for new and experienced students.' },
+  { name: 'Kids BJJ', image: 'kids', alt: 'Young students drilling takedowns while a coach supervises at Praxis Jiu Jitsu', text: 'Supervised classes for ages 5–12 use drills, movement games, and partner work to teach Jiu Jitsu. Students practice coordination, focus, discipline, and respect for others.' },
+  { name: "Women's BJJ", image: 'women', alt: 'Two women training together under the Praxis Jiu Jitsu Academy banner', text: 'Jiu Jitsu and self-defense instruction for women, led by Coach Nikki Molina. Learn grappling techniques, practice with training partners, and develop your skills on the mats.' },
 ];
 export type ClassKind = 'kids' | 'beginners' | 'gi' | 'nogi' | 'open';
 export type Session = { time: string; name: string; detail?: string; kind: ClassKind };
@@ -44,14 +44,14 @@ export const schedule: { day: string; sessions: Session[] }[] = [
   { day: 'Saturday', sessions: [{ time: '11:00 AM', name: 'All Levels No-Gi', detail: 'Beginners welcome', kind: 'nogi' }] },
 ];
 export const coaches = [
-  { name: 'Darien Molina', image: 'darien', role: 'Head Coach · Adult Program', bio: 'Over 10 years of training and competitive experience. Specializes in adult instruction with an emphasis on fundamentals, problem-solving, and building lasting confidence through intentional practice.' },
-  { name: 'Nikki Molina', image: 'nikki', role: "Black Belt · Kids & Women's Programs", bio: "Black belt with 10+ years across kids, adult, and women's programs. Creates welcoming environments where every student feels valued, seen, and genuinely encouraged to grow." },
+  { name: 'Darien Molina', image: 'darien', role: 'Head Coach · Adult Program', bio: 'Darien brings over 10 years of training and competitive experience to the adult program. His instruction emphasizes fundamentals, technical problem-solving, and applying techniques in practice.' },
+  { name: 'Nikki Molina', image: 'nikki', role: "Black Belt · Kids & Women's Programs", bio: "Nikki is a black belt with over 10 years of experience across kids, adult, and women's programs. She leads the kids and women's programs with an emphasis on clear instruction, controlled practice, and skill development." },
 ];
 export const classes = {
-  intro: 'From your first class to the competition floor — we have a program for every level, every age, and every goal.',
+  intro: 'View the weekly schedule for kids, adult beginners, Gi, No-Gi, and open training. Classes run Monday through Saturday.',
   scheduleIntro: 'Our schedule runs Monday through Saturday. All classes held at 965 US-550, Suite E, Bernalillo NM.',
-  start: "You don't need to get in shape first. You don't need experience, a gi, or a plan. Show up in comfortable clothes and we'll take care of the rest — every black belt on these mats had a first day too.",
-  programsIntro: "Whether you're brand new or chasing competition gold — there's a class built for you.",
+  start: "No prior experience is required for your first class. Wear comfortable workout clothes; you do not need to own a gi to get started. Book a free intro class or contact us for help choosing a class.",
+  programsIntro: "Explore the class formats, experience levels, and training focus below.",
   kids: [
     'Kids Jiu-Jitsu program is designed to be safe, structured, and engaging, while giving children the freedom to learn and grow at their own pace. Classes emphasize positive coaching, controlled movement, and respect for training partners. Instructors actively guide and supervise students at all times to ensure a supportive and encouraging environment.',
     'Training is structured but fun, using a mix of drills, movement games, and guided partner work to keep kids engaged while learning. We focus on proper movement, balance, and body awareness before progressing to more complex techniques, helping students build confidence without feeling overwhelmed.',
@@ -59,25 +59,25 @@ export const classes = {
   ],
   physical: ['Strength & overall fitness', 'Coordination', 'Flexibility', 'Balance & body awareness'],
   life: ['Focus & problem-solving', 'Patience & perseverance', 'Confidence & self-control', 'Respect for others'],
-  cta: "Call or text to set up your free intro class. We'll handle the rest.",
+  cta: "Book online, call, or text to schedule your free intro class.",
 };
 export const classDetails = [
-  { name: 'Adult Beginners', label: 'All Levels Welcome', image: 'technique', kind: 'beginners', text: "No experience needed. This class strips Jiu-Jitsu down to its core — fundamental positions, escapes, submissions, and the mindset to keep showing up. The perfect entry point.", focus: 'Core techniques, safety, building mat confidence' },
-  { name: 'Adult Gi', label: 'Intermediate · Advanced', image: 'adults', kind: 'gi', text: 'The traditional gi game at an elevated level. Sharpen your technical precision, deepen your positional understanding, and develop the detail-oriented approach that separates good from great.', focus: 'Technical precision, grip fighting, positional control' },
-  { name: 'Adult No-Gi', label: 'Intermediate · Advanced', image: 'women', kind: 'nogi', text: 'Fast, dynamic, and athletic. No-Gi develops a different kind of awareness — tighter control, faster transitions, and a game built for speed. Great for competitors and grapplers of all backgrounds.', focus: 'Body locks, leg attacks, wrestling, dynamic movement' },
+  { name: 'Adult Beginners', label: 'All Levels Welcome', image: 'technique', kind: 'beginners', text: "An introduction to fundamental positions, escapes, and submissions. Learn core techniques and how to practice safely with a partner. No previous Jiu Jitsu experience is required.", focus: 'Core techniques, safety, building mat confidence' },
+  { name: 'Adult Gi', label: 'Intermediate · Advanced', image: 'adults', kind: 'gi', text: 'Develop your Gi technique through grip fighting, positional control, and detailed instruction. Classes build on the fundamentals with an emphasis on technical precision.', focus: 'Technical precision, grip fighting, positional control' },
+  { name: 'Adult No-Gi', label: 'Intermediate · Advanced', image: 'women', kind: 'nogi', text: 'Train without the traditional gi, focusing on body control, wrestling, and transitions. Work on body locks, leg attacks, and movement for No-Gi grappling.', focus: 'Body locks, leg attacks, wrestling, dynamic movement' },
 ];
 export const openTraining = {
   friday: 'Open mat every Friday at 6pm. Come roll, drill, or just watch. Visitors from any academy are always welcome.',
   saturday: [
-    'Our All Levels No-Gi class is exactly what it sounds like, welcoming everyone from first-day beginners to seasoned upper belts. This class focuses on the core concepts, techniques, and strategies of Jiu Jitsu without the use of a traditional gi (kimono).',
-    "Whether you're stepping on the mats for the first time or refining your existing skills, you'll find a challenging and supportive training environment designed to help you grow at your own pace.",
+    'Saturday No-Gi is open to all experience levels, including first-time students. The class covers core concepts, techniques, and strategies without the traditional gi (kimono).',
+    "Beginners work on the fundamentals while more experienced students refine their technique. No gi is required.",
   ],
 };
 export const routes = [
   { path: '/', label: 'Home', title: 'Praxis Jiu Jitsu Academy | Bernalillo, NM', description: home.intro },
   { path: '/about/', label: 'About', title: 'About Our Academy | Praxis Jiu Jitsu', description: 'Black belt founded. Family owned. Community driven. Discover Praxis Jiu Jitsu in Bernalillo, New Mexico.' },
-  { path: '/programs/', label: 'Programs', title: 'Jiu Jitsu Programs for Kids & Adults | Praxis', description: 'Explore adult, kids and women’s Jiu Jitsu at Praxis. From your first class to competition prep, find your path.' },
-  { path: '/instructors/', label: 'Instructors', title: 'Meet Darien & Nikki Molina | Praxis Instructors', description: 'Meet the coaches at Praxis Jiu Jitsu Academy: Darien Molina and Nikki Molina. Intentional instruction in a welcoming community.' },
+  { path: '/programs/', label: 'Programs', title: 'Jiu Jitsu Programs for Kids & Adults | Praxis', description: 'Explore adult, kids and women’s Jiu Jitsu at Praxis in Bernalillo. Learn about beginner, Gi, No-Gi and open-training classes.' },
+  { path: '/instructors/', label: 'Instructors', title: 'Meet Darien & Nikki Molina | Praxis Instructors', description: 'Meet Darien and Nikki Molina, the instructors behind the adult, kids and women’s programs at Praxis Jiu Jitsu Academy.' },
   { path: '/praxis-classes/', label: 'Classes', title: 'Weekly Class Schedule | Praxis Jiu Jitsu', description: 'Monday–Saturday Jiu Jitsu classes in Bernalillo. Kids, adult beginners, Gi, No-Gi and open training. Your first class is free.' },
   { path: '/contact/', label: 'Contact', title: 'Contact & Free Trial | Praxis Jiu Jitsu', description: 'Visit Praxis at 965 US Highway 550, Suite E, Bernalillo, NM. Call 505-459-6188 or sign up for a free first class.' },
 ];

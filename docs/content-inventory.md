@@ -2,7 +2,7 @@
 
 Captured from the live browser on 2026-09-30. Sources: https://prxsjiujitsu.com/ and https://prxsjiujitsu.com/praxis-classes/. Search snapshots are stale; live Classes includes Saturday and the 7 PM No-Gi class.
 
-## Homepage (retain every section)
+## Original homepage inventory (historical source)
 
 1. Bernalillo, New Mexico; Forge Your Best Self; instruction introduction; free-class CTA and Explore Programs.
 2. Respect, Consistency, Community and all three supporting descriptions.
@@ -14,7 +14,7 @@ Captured from the live browser on 2026-09-30. Sources: https://prxsjiujitsu.com/
 8. Your First Class Is Free; No experience needed. No commitment required. Just show up.; booking, phone, call/text.
 9. Find Us Here; full street address, phone, email, Instagram, map; logo, tagline and copyright.
 
-## Classes (retain every section)
+## Original Classes inventory (historical source)
 
 1. Praxis JJ Academy / Train Hard. Train Smart.; full introduction.
 2. Monday–Saturday schedule and location introduction.
@@ -43,4 +43,11 @@ Captured from the live browser on 2026-09-30. Sources: https://prxsjiujitsu.com/
 
 ## Content ownership
 
-The full source copy is transcribed into src/data/content.ts and used across pages. New page labels and navigation are presentation scaffolding. Production assets derive only from user-supplied Assets/PRAXIS files; originals are excluded from Git.
+The original source copy was transcribed into src/data/content.ts. The current file contains the revised, user-requested messaging used across pages. New page labels and navigation are presentation scaffolding. Production assets derive only from user-supplied Assets/PRAXIS files; originals are excluded from Git.
+
+
+## Messaging revision — 2026-09-30
+
+The user requested removal of “people pulling for you” and similar sentimental wording across the site. Meru BJJ (https://www.merubjj.com/) and Del Mar Jiu-Jitsu Club (https://www.delmarjiujitsuclub.com/) were reviewed for messaging direction. The revised Praxis copy is original and emphasizes classes, instruction, fundamentals, technique, and how to start training. No competitor claims, prices, credentials, or slogans were adopted.
+
+Updated the homepage hero, academy and mission sections, values, program descriptions, instructor introductions and biographies, newcomer guidance, class descriptions, and page metadata. All existing sections, academy facts, schedule times, and contact/booking destinations remain represented. Original wording in the inventory above is retained only as a historical source record.
