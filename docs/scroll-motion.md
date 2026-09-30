@@ -35,7 +35,7 @@ Each schedule moves as one panel, keeping times, day columns and borders togethe
 - Classes: schedule over hero, class details over newcomer guidance.
 - Contact: free-trial introduction over hero, values over location/contact.
 
-A ResizeObserver tracks section and header heights. A section taller than the viewport scrolls to its bottom before resting, preserving access to its full content. The final section remains in normal flow. Keyboard focus releases an underlay so its links can be scrolled into view. At widths below 768px, with reduced motion, or without measurement support, all layers remain in normal document flow.
+A ResizeObserver tracks section and header heights. A section taller than the viewport scrolls to its bottom before resting, preserving access to its full content. The final section remains in normal flow. Keyboard focus releases an underlay so its links can be scrolled into view. Section covers work at all viewport widths, including phones with native touch scrolling. With reduced motion or without measurement support, all layers remain in normal document flow. The separate GSAP text/card parallax still retains its original mobile breakpoint.
 
 ## Accessibility and lifecycle
 
