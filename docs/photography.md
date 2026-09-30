@@ -27,7 +27,7 @@ Paths below are relative to `Assets/PRAXIS`. `iCloud/` abbreviates `iCloud Photo
 | Programs / newcomer | giRack | Praxis_Jiu_Jitsu_Academy_interior-8.jpg | Academy equipment; no claim of loaner availability |
 | Programs / kids details | kidsDrilling | iCloud/IMG_1488.jpg | Two young students drilling on the ground |
 | Programs / open training | academyPractice | iCloud/IMG_7937.jpg | Practice across the academy mats |
-| Instructors / hero | beltPresentation | iCloud/IMG_8026.jpg | Coaches and a student at a belt presentation; third person not labeled as staff |
+| Instructors / hero | trainingSpace | Praxis_Jiu_Jitsu_Academy_interior-20.jpg | Empty academy mats and wall logo; avoids suggesting that unconfirmed people are instructors |
 | Instructors / Darien | darien | DSC06098-scaled.webp | Individual coach portrait |
 | Instructors / Nikki | nikki | DSC06066-scaled.webp | Individual coach portrait |
 | Classes / hero | classInstruction | iCloud/praxisjul26b.jpg | Class gathered for instruction |
@@ -38,6 +38,8 @@ Paths below are relative to `Assets/PRAXIS`. `iCloud/` abbreviates `iCloud Photo
 | Contact / location | visitorSeating | Praxis_Jiu_Jitsu_Academy_interior-12.jpg | Seating beside the entrance windows and mat area |
 
 ## Relevance decisions
+
+- Replaced the three-person belt-presentation image on Instructors with a distinct academy interior at the owner’s request. The middle person’s instructor status is unconfirmed; only Darien and Nikki’s established portraits appear in the instructor biographies.
 
 - No clearly identifiable adult No-Gi action photograph was found in the reviewed assets. Removed Gi photographs from the No-Gi and Saturday No-Gi descriptions. Detailed adult class formats now use consistent text cards; Saturday uses a branded No-Gi typographic panel.
 - Open-training images depict general academy activity. Their alt text does not claim that the photos were taken during a Friday session.

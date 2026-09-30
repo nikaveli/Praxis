@@ -24,7 +24,7 @@ export const photography = {
     open: { name: 'classGathering', alt: 'Adult students seated on the mats during class at Praxis' },
   },
   instructors: {
-    hero: { name: 'beltPresentation', alt: 'A belt presentation with Praxis coaches and a student' },
+    hero: { name: 'trainingSpace', alt: 'Praxis academy mats and wall logo, looking toward the front windows' },
   },
   contact: {
     hero: { name: 'entrance', alt: 'The entrance to Praxis Jiu Jitsu Academy with its sign above the door' },

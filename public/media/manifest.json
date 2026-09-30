@@ -474,31 +474,6 @@
       }
     ]
   },
-  "beltPresentation": {
-    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_8026.jpg",
-    "width": 5712,
-    "height": 4284,
-    "derivatives": [
-      {
-        "file": "beltPresentation-640.webp",
-        "width": 640,
-        "height": 480,
-        "bytes": 24204
-      },
-      {
-        "file": "beltPresentation-1280.webp",
-        "width": 1280,
-        "height": 960,
-        "bytes": 61576
-      },
-      {
-        "file": "beltPresentation-1920.webp",
-        "width": 1920,
-        "height": 1440,
-        "bytes": 109456
-      }
-    ]
-  },
   "classInstruction": {
     "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/praxisjul26b.jpg",
     "width": 4284,
@@ -653,5 +628,30 @@
     "source": "IMG_1067-scaled.webp",
     "width": 1000,
     "height": 350
+  },
+  "trainingSpace": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior-20.jpg",
+    "width": 4240,
+    "height": 2832,
+    "derivatives": [
+      {
+        "file": "trainingSpace-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 26456
+      },
+      {
+        "file": "trainingSpace-1280.webp",
+        "width": 1280,
+        "height": 855,
+        "bytes": 93230
+      },
+      {
+        "file": "trainingSpace-1920.webp",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 206664
+      }
+    ]
   }
 }

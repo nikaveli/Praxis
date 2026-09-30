@@ -21,7 +21,7 @@ const assets = {
   giRack: 'Praxis_Jiu_Jitsu_Academy_interior-8.jpg',
   kidsDrilling: `${icloud}/IMG_1488.jpg`,
   academyPractice: `${icloud}/IMG_7937.jpg`,
-  beltPresentation: `${icloud}/IMG_8026.jpg`,
+  trainingSpace: 'Praxis_Jiu_Jitsu_Academy_interior-20.jpg',
   classInstruction: `${icloud}/praxisjul26b.jpg`,
   fundamentals: `${icloud}/IMG_1552.jpg`,
   kidsPractice: `${icloud}/IMG_1407.jpg`,

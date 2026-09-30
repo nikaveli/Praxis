@@ -43,7 +43,6 @@
 .training-format span:first-child{font-family:var(--display);font-size:clamp(90px,11vw,160px);font-weight:600;line-height:1;text-transform:uppercase}
 .training-format span:last-child{font-size:11px;text-transform:uppercase;letter-spacing:.12em;border-top:1px solid #e9e8e350;padding-top:20px}
 .page-hero>.photo[src*="praxisGi-"]{object-position:50% 55%}
-.page-hero>.photo[src*="beltPresentation-"]{object-position:50% 38%}
 .page-hero>.photo[src*="classInstruction-"]{object-position:50% 75%}
 .page-hero>.photo[src*="entrance-"]{object-position:50% 35%}
 @media(max-width:900px){.coaches-home .coaches-overview{gap:36px;grid-template-columns:1fr}.coaches-home .owners-photo{max-width:720px;margin-inline:auto}.coaches-home .coach-grid{grid-template-columns:1fr 1fr;gap:30px}.coaches-home .coach+.coach{border:0;padding:0}}
