@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motionSections } from './useLocomotiveScroll';
+import { initGlobalParallax } from '../animation/globalParallax.js';
 
 // Values are percentages of each target's own height, as in the supplied resource.
 export function prepareParallax(root: HTMLElement, path: string) {
@@ -42,7 +43,6 @@ export function useGlobalParallax(path: string) {
       destroy();
       if (preference.matches) return;
       try {
-        const { initGlobalParallax } = await import('../animation/globalParallax.js');
         await document.fonts?.ready;
         if (disposed || current !== generation || preference.matches) return;
         const media = initGlobalParallax();

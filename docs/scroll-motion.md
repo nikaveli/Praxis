@@ -8,7 +8,7 @@ Updated September 30, 2026 from the supplied Osmo **Locomotive Smooth Scroll Set
 - GSAP 3.15 and ScrollTrigger handle text, complete program/class cards, and the two schedule grids through the supplied `data-parallax-*` attributes.
 - The supplied Global Parallax tween and breakpoint logic is retained in `src/animation/globalParallax.js`. Integration additions are ESM imports/export and returning its matchMedia handle for React cleanup; initialization runs after React mounts and fonts are ready.
 - Neither library transforms the other's targets or ancestors. Navigation, booking dialogs, and individual schedule days are not animation targets.
-- Both libraries are served locally by Vite. No demo images, fonts, or styling from the Osmo example were added.
+- Both libraries are served locally by Vite; GSAP is included in the entry bundle so the in-app preview does not depend on a separate animation-module fetch. No demo images, fonts, or styling from the Osmo example were added.
 
 ## Placements and values
 
@@ -29,7 +29,7 @@ Each schedule moves as one panel, keeping times, day columns and borders togethe
 - Reduced-motion preference prevents initialization and reverts both animation layers if changed during a visit.
 - Both the loading/failure dialog and Gymdesk popup pause/resume page scrolling and use `data-lenis-prevent` for independent form scrolling.
 - The Gymdesk observer ignores unrelated animation-style changes.
-- Dynamic imports and effect cleanup preserve static rendering and native scrolling if either animation library is unavailable.
+- Effect cleanup preserves static rendering and native scrolling if either animation library cannot initialize.
 
 Validation: 14 passing tests, TypeScript, production build, static routes/assets/anchors, real-browser initialization on all six routes with no overlapping animation owners or console errors, calendar entrance/settled transforms and aligned days, and mobile breakpoint reversion with a readable two-column schedule. Existing tests cover booking pause/resume and reduced-motion lifecycle. No test leads were submitted.
 
