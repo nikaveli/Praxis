@@ -174,81 +174,6 @@
       }
     ]
   },
-  "team": {
-    "source": "praxisGroup-scaled.jpg",
-    "width": 2560,
-    "height": 1639,
-    "derivatives": [
-      {
-        "file": "team-640.webp",
-        "width": 640,
-        "height": 410,
-        "bytes": 30276
-      },
-      {
-        "file": "team-1280.webp",
-        "width": 1280,
-        "height": 820,
-        "bytes": 86506
-      },
-      {
-        "file": "team-1920.webp",
-        "width": 1920,
-        "height": 1229,
-        "bytes": 156800
-      }
-    ]
-  },
-  "facility": {
-    "source": "Praxis_Jiu_Jitsu_Academy_interior.jpg",
-    "width": 4284,
-    "height": 5712,
-    "derivatives": [
-      {
-        "file": "facility-640.webp",
-        "width": 640,
-        "height": 853,
-        "bytes": 47984
-      },
-      {
-        "file": "facility-1280.webp",
-        "width": 1280,
-        "height": 1707,
-        "bytes": 170174
-      },
-      {
-        "file": "facility-1920.webp",
-        "width": 1920,
-        "height": 2560,
-        "bytes": 343478
-      }
-    ]
-  },
-  "exterior": {
-    "source": "Praxis_Jiu_Jitsu_Academy_exterior.jpg",
-    "width": 4016,
-    "height": 3012,
-    "derivatives": [
-      {
-        "file": "exterior-640.webp",
-        "width": 640,
-        "height": 480,
-        "bytes": 35406
-      },
-      {
-        "file": "exterior-1280.webp",
-        "width": 1280,
-        "height": 960,
-        "bytes": 141504
-      },
-      {
-        "file": "exterior-1920.webp",
-        "width": 1920,
-        "height": 1440,
-        "bytes": 350406
-      }
-    ]
-  },
   "technique": {
     "source": "DSC00243 (1).jpg",
     "width": 1638,
@@ -274,34 +199,459 @@
       }
     ]
   },
-  "logo": {
-    "source": "IMG_1067-scaled.webp",
-    "width": 1000,
-    "height": 350
+  "owners": {
+    "source": "Praxis-owners-2.webp",
+    "width": 1440,
+    "height": 900,
+    "derivatives": [
+      {
+        "file": "owners-640.webp",
+        "width": 640,
+        "height": 400,
+        "bytes": 19454
+      },
+      {
+        "file": "owners-1280.webp",
+        "width": 1280,
+        "height": 800,
+        "bytes": 61496
+      },
+      {
+        "file": "owners-1920.webp",
+        "width": 1440,
+        "height": 900,
+        "bytes": 93020
+      }
+    ]
   },
-  "pinning": {
-    "source": "DSC00227.webp",
+  "academy": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior-18.jpg",
+    "width": 4240,
+    "height": 2832,
+    "derivatives": [
+      {
+        "file": "academy-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 20140
+      },
+      {
+        "file": "academy-1280.webp",
+        "width": 1280,
+        "height": 855,
+        "bytes": 64070
+      },
+      {
+        "file": "academy-1920.webp",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 148602
+      }
+    ]
+  },
+  "platform": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior-21.jpg",
+    "width": 4240,
+    "height": 2832,
+    "derivatives": [
+      {
+        "file": "platform-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 25372
+      },
+      {
+        "file": "platform-1280.webp",
+        "width": 1280,
+        "height": 855,
+        "bytes": 86002
+      },
+      {
+        "file": "platform-1920.webp",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 189680
+      }
+    ]
+  },
+  "academyGroup": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_1317.jpg",
+    "width": 5045,
+    "height": 3784,
+    "derivatives": [
+      {
+        "file": "academyGroup-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 37618
+      },
+      {
+        "file": "academyGroup-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 106496
+      },
+      {
+        "file": "academyGroup-1920.webp",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 203168
+      }
+    ]
+  },
+  "praxisGi": {
+    "source": "DSC09667.jpg",
     "width": 1638,
     "height": 2048,
     "derivatives": [
       {
-        "file": "pinning-640.webp",
+        "file": "praxisGi-640.webp",
         "width": 640,
         "height": 800,
-        "bytes": 59172
+        "bytes": 63442
       },
       {
-        "file": "pinning-1280.webp",
+        "file": "praxisGi-1280.webp",
         "width": 1280,
         "height": 1600,
-        "bytes": 218728
+        "bytes": 273226
       },
       {
-        "file": "pinning-1920.webp",
+        "file": "praxisGi-1920.webp",
         "width": 1638,
         "height": 2048,
-        "bytes": 393508
+        "bytes": 388516
       }
     ]
+  },
+  "adultPractice": {
+    "source": "DSC09658.jpg",
+    "width": 1638,
+    "height": 2048,
+    "derivatives": [
+      {
+        "file": "adultPractice-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 48918
+      },
+      {
+        "file": "adultPractice-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 174680
+      },
+      {
+        "file": "adultPractice-1920.webp",
+        "width": 1638,
+        "height": 2048,
+        "bytes": 251834
+      }
+    ]
+  },
+  "kidsCoaching": {
+    "source": "DSC00407-scaled.jpg",
+    "width": 2048,
+    "height": 2560,
+    "derivatives": [
+      {
+        "file": "kidsCoaching-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 34010
+      },
+      {
+        "file": "kidsCoaching-1280.webp",
+        "width": 1280,
+        "height": 1600,
+        "bytes": 91872
+      },
+      {
+        "file": "kidsCoaching-1920.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 154454
+      }
+    ]
+  },
+  "womensPractice": {
+    "source": "DSC00280 (1).jpg",
+    "width": 1639,
+    "height": 2048,
+    "derivatives": [
+      {
+        "file": "womensPractice-640.webp",
+        "width": 640,
+        "height": 800,
+        "bytes": 48294
+      },
+      {
+        "file": "womensPractice-1280.webp",
+        "width": 1280,
+        "height": 1599,
+        "bytes": 162294
+      },
+      {
+        "file": "womensPractice-1920.webp",
+        "width": 1639,
+        "height": 2048,
+        "bytes": 231692
+      }
+    ]
+  },
+  "giRack": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior-8.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "giRack-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 55440
+      },
+      {
+        "file": "giRack-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 225388
+      },
+      {
+        "file": "giRack-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 448242
+      }
+    ]
+  },
+  "kidsDrilling": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_1488.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "kidsDrilling-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 59080
+      },
+      {
+        "file": "kidsDrilling-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 232052
+      },
+      {
+        "file": "kidsDrilling-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 555504
+      }
+    ]
+  },
+  "academyPractice": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_7937.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "academyPractice-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 50038
+      },
+      {
+        "file": "academyPractice-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 164980
+      },
+      {
+        "file": "academyPractice-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 302234
+      }
+    ]
+  },
+  "beltPresentation": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_8026.jpg",
+    "width": 5712,
+    "height": 4284,
+    "derivatives": [
+      {
+        "file": "beltPresentation-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 24204
+      },
+      {
+        "file": "beltPresentation-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 61576
+      },
+      {
+        "file": "beltPresentation-1920.webp",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 109456
+      }
+    ]
+  },
+  "classInstruction": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/praxisjul26b.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "classInstruction-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 77182
+      },
+      {
+        "file": "classInstruction-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 224264
+      },
+      {
+        "file": "classInstruction-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 409412
+      }
+    ]
+  },
+  "fundamentals": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_1552.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "fundamentals-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 46432
+      },
+      {
+        "file": "fundamentals-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 147862
+      },
+      {
+        "file": "fundamentals-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 272390
+      }
+    ]
+  },
+  "kidsPractice": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_1407.jpg",
+    "width": 3024,
+    "height": 4032,
+    "derivatives": [
+      {
+        "file": "kidsPractice-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 56070
+      },
+      {
+        "file": "kidsPractice-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 145204
+      },
+      {
+        "file": "kidsPractice-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 244662
+      }
+    ]
+  },
+  "classGathering": {
+    "source": "iCloud Photos from Praxis Jiu Jitsu Academy LLC/IMG_1323.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "classGathering-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 69058
+      },
+      {
+        "file": "classGathering-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 206770
+      },
+      {
+        "file": "classGathering-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 380558
+      }
+    ]
+  },
+  "entrance": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior-16.jpg",
+    "width": 4240,
+    "height": 2832,
+    "derivatives": [
+      {
+        "file": "entrance-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 45592
+      },
+      {
+        "file": "entrance-1280.webp",
+        "width": 1280,
+        "height": 855,
+        "bytes": 168762
+      },
+      {
+        "file": "entrance-1920.webp",
+        "width": 1920,
+        "height": 1282,
+        "bytes": 393656
+      }
+    ]
+  },
+  "visitorSeating": {
+    "source": "Praxis_Jiu_Jitsu_Academy_interior-12.jpg",
+    "width": 4284,
+    "height": 5712,
+    "derivatives": [
+      {
+        "file": "visitorSeating-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 74582
+      },
+      {
+        "file": "visitorSeating-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 280932
+      },
+      {
+        "file": "visitorSeating-1920.webp",
+        "width": 1920,
+        "height": 2560,
+        "bytes": 605040
+      }
+    ]
+  },
+  "logo": {
+    "source": "IMG_1067-scaled.webp",
+    "width": 1000,
+    "height": 350
   }
 }

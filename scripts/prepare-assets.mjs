@@ -4,12 +4,30 @@ import { execFileSync } from 'node:child_process';
 const source = 'Assets/PRAXIS';
 const out = 'public/media';
 await mkdir(out, { recursive: true });
+const icloud = 'iCloud Photos from Praxis Jiu Jitsu Academy LLC';
 const assets = {
   community: 'DSC00453-scaled.jpg', mission: 'DSC00397-scaled.jpg',
   adults: 'DSC00444-scaled.jpg', kids: 'DSC00378-scaled.jpg', women: 'DSC00465-scaled.jpg',
   darien: 'DSC06098-scaled.webp', nikki: 'DSC06066-scaled.webp',
-  team: 'praxisGroup-scaled.jpg', facility: 'Praxis_Jiu_Jitsu_Academy_interior.jpg',
-  exterior: 'Praxis_Jiu_Jitsu_Academy_exterior.jpg', technique: 'DSC00243 (1).jpg', pinning: 'DSC00227.webp',
+  technique: 'DSC00243 (1).jpg',
+  owners: 'Praxis-owners-2.webp',
+  academy: 'Praxis_Jiu_Jitsu_Academy_interior-18.jpg',
+  platform: 'Praxis_Jiu_Jitsu_Academy_interior-21.jpg',
+  academyGroup: `${icloud}/IMG_1317.jpg`,
+  praxisGi: 'DSC09667.jpg',
+  adultPractice: 'DSC09658.jpg',
+  kidsCoaching: 'DSC00407-scaled.jpg',
+  womensPractice: 'DSC00280 (1).jpg',
+  giRack: 'Praxis_Jiu_Jitsu_Academy_interior-8.jpg',
+  kidsDrilling: `${icloud}/IMG_1488.jpg`,
+  academyPractice: `${icloud}/IMG_7937.jpg`,
+  beltPresentation: `${icloud}/IMG_8026.jpg`,
+  classInstruction: `${icloud}/praxisjul26b.jpg`,
+  fundamentals: `${icloud}/IMG_1552.jpg`,
+  kidsPractice: `${icloud}/IMG_1407.jpg`,
+  classGathering: `${icloud}/IMG_1323.jpg`,
+  entrance: 'Praxis_Jiu_Jitsu_Academy_interior-16.jpg',
+  visitorSeating: 'Praxis_Jiu_Jitsu_Academy_interior-12.jpg',
 };
 const manifest = {};
 for (const [name, file] of Object.entries(assets)) {

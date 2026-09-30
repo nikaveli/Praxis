@@ -62,9 +62,9 @@ export const classes = {
   cta: "Book online, call, or text to schedule your free intro class.",
 };
 export const classDetails = [
-  { name: 'Adult Beginners', label: 'All Levels Welcome', image: 'technique', kind: 'beginners', text: "An introduction to fundamental positions, escapes, and submissions. Learn core techniques and how to practice safely with a partner. No previous Jiu Jitsu experience is required.", focus: 'Core techniques, safety, building mat confidence' },
-  { name: 'Adult Gi', label: 'Intermediate · Advanced', image: 'adults', kind: 'gi', text: 'Develop your Gi technique through grip fighting, positional control, and detailed instruction. Classes build on the fundamentals with an emphasis on technical precision.', focus: 'Technical precision, grip fighting, positional control' },
-  { name: 'Adult No-Gi', label: 'Intermediate · Advanced', image: 'women', kind: 'nogi', text: 'Train without the traditional gi, focusing on body control, wrestling, and transitions. Work on body locks, leg attacks, and movement for No-Gi grappling.', focus: 'Body locks, leg attacks, wrestling, dynamic movement' },
+  { name: 'Adult Beginners', label: 'All Levels Welcome', kind: 'beginners', text: "An introduction to fundamental positions, escapes, and submissions. Learn core techniques and how to practice safely with a partner. No previous Jiu Jitsu experience is required.", focus: 'Core techniques, safety, building mat confidence' },
+  { name: 'Adult Gi', label: 'Intermediate · Advanced', kind: 'gi', text: 'Develop your Gi technique through grip fighting, positional control, and detailed instruction. Classes build on the fundamentals with an emphasis on technical precision.', focus: 'Technical precision, grip fighting, positional control' },
+  { name: 'Adult No-Gi', label: 'Intermediate · Advanced', kind: 'nogi', text: 'Train without the traditional gi, focusing on body control, wrestling, and transitions. Work on body locks, leg attacks, and movement for No-Gi grappling.', focus: 'Body locks, leg attacks, wrestling, dynamic movement' },
 ];
 export const openTraining = {
   friday: 'Open mat every Friday at 6pm. Come roll, drill, or just watch. Visitors from any academy are always welcome.',

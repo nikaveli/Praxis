@@ -12,21 +12,6 @@
 
 ## Asset map
 
-| Use | Supplied source |
-|---|---|
-| Logo | IMG_1067-scaled.webp |
-| Hero video and poster (academy exterior / Sandia Mountains) | praxisHero-Video (1).mp4 |
-| Community | DSC00453-scaled.jpg |
-| Mission | DSC00397-scaled.jpg |
-| Adult program | DSC00444-scaled.jpg |
-| Kids program | DSC00378-scaled.jpg |
-| Women’s program | DSC00465-scaled.jpg |
-| Darien Molina | DSC06098-scaled.webp |
-| Nikki Molina | DSC06066-scaled.webp |
-| Academy/team | praxisGroup-scaled.jpg |
-| Adult instruction | DSC00243 (1).jpg |
-| Saturday training | DSC00227.webp |
-| Facility | Praxis_Jiu_Jitsu_Academy_interior.jpg |
-| Contact/location | Praxis_Jiu_Jitsu_Academy_exterior.jpg |
+See [the photography inventory](photography.md) for the current page-by-page placement of 26 distinct photographs and relevance notes. Source dimensions and responsive derivative sizes are recorded in `public/media/manifest.json`.
 
-Asset processing records original dimensions and derivative sizes in public/media/manifest.json. Full-width video is default; split editorial and poster-stack variants are review-only options.
+The logo uses `IMG_1067-scaled.webp`. The hero video and poster use `praxisHero-Video (1).mp4`; the social preview uses `praxisGroup-scaled.jpg`. Full-width video is the default; split editorial and poster-stack variants are review-only options.
