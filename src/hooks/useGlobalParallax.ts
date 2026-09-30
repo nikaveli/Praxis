@@ -8,19 +8,19 @@ export function prepareParallax(root: HTMLElement, path: string) {
   const add = (element: HTMLElement, start: number, kind: string) => {
     element.setAttribute('data-parallax', 'trigger');
     element.setAttribute('data-parallax-start', String(start));
-    element.setAttribute('data-parallax-end', '0');
-    element.setAttribute('data-parallax-scroll-end', 'top 35%');
+    element.setAttribute('data-parallax-end', String(-start));
+    element.setAttribute('data-parallax-scroll-end', 'bottom top');
     element.setAttribute('data-parallax-disable', 'mobileLandscape');
     element.setAttribute('data-parallax-kind', kind);
     elements.push(element);
   };
   for (const section of motionSections[path] ?? []) {
-    root.querySelectorAll<HTMLElement>(`${section} h2, ${section}.values h3`).forEach(element => add(element, 12, 'text'));
+    root.querySelectorAll<HTMLElement>(`${section} h2, ${section}.values h3`).forEach(element => add(element, 20, 'text'));
   }
-  root.querySelectorAll<HTMLElement>('.schedule-section h2').forEach(element => add(element, 12, 'text'));
-  root.querySelectorAll<HTMLElement>('.program-card, .class-detail').forEach((element, index) => add(element, [4, 6, 8][index % 3], 'card'));
+  root.querySelectorAll<HTMLElement>('.schedule-section h2').forEach(element => add(element, 20, 'text'));
+  root.querySelectorAll<HTMLElement>('.program-card, .class-detail').forEach((element, index) => add(element, [12, -6, -12][index % 3], 'card'));
   // Keep days, times, borders and labels together throughout the movement.
-  root.querySelectorAll<HTMLElement>('.schedule-grid').forEach(element => add(element, 4, 'calendar'));
+  root.querySelectorAll<HTMLElement>('.schedule-grid').forEach(element => add(element, 8, 'calendar'));
   return elements;
 }
 

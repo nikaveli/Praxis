@@ -52,9 +52,15 @@
 /* Locomotive v5 owns wheel interpolation; retain native touch and reduced motion. */
 html.lenis{scroll-behavior:auto!important}
 .praxis-motion [data-scroll-speed]{will-change:transform}
-.praxis-motion .facility-strip>.photo{scale:1.12}
-@media(prefers-reduced-motion:reduce){[data-scroll-speed]{transform:none!important;will-change:auto!important}.facility-strip>.photo{scale:1!important}}
+.praxis-motion .facility-strip>.photo{height:calc(100% + 12vh);margin-top:-6vh}
+@media(prefers-reduced-motion:reduce){[data-scroll-speed]{transform:none!important;will-change:auto!important}.facility-strip>.photo{height:100%!important;margin-top:0!important}}
 
 /* Osmo GSAP parallax: retain full text visibility and stable mobile schedules. */
 @media(min-width:768px) and (prefers-reduced-motion:no-preference){.praxis-parallax [data-parallax="trigger"]{will-change:transform}}
 @media(prefers-reduced-motion:reduce){[data-parallax="trigger"]{transform:none!important;will-change:auto!important}}
+
+/* Clearance for opposing card speeds and a calendar that travels as one panel. */
+@media(min-width:768px) and (prefers-reduced-motion:no-preference){
+  .program-grid,.class-detail-grid{padding-block:80px}
+  .schedule-grid{margin-block:55px}
+}

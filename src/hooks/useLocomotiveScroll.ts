@@ -27,7 +27,7 @@ export function useLocomotiveScroll(path: string) {
     const elements = Array.from(document.querySelector('main')?.querySelectorAll<HTMLElement>(photoTargets[path]) ?? []);
     elements.forEach((element, index) => {
       element.setAttribute('data-scroll', '');
-      element.setAttribute('data-scroll-speed', index % 2 ? '-0.015' : '0.025');
+      element.setAttribute('data-scroll-speed', index % 2 ? '-0.05' : '0.1');
       element.setAttribute('data-scroll-offset', '0, 0');
     });
     let instance: LocomotiveScroll | undefined;

@@ -12,8 +12,9 @@ Updated September 30, 2026 from the supplied Osmo **Locomotive Smooth Scroll Set
 
 ## Placements and values
 
-Headings in the previously selected alternating editorial sections ease vertically from 12% of their height to their natural position. Program and class-format cards start at 4%, 6%, or 8%; complete schedule panels start at 4%. All settle to zero when the target top reaches 35% of the viewport. Scroll progress directly controls the effect with the supplied default `scrub: true`.
+The supplied [Locomotive demo](https://osmo-locomotive-smooth-scroll.webflow.io/) uses continuous movement at different speeds, including photo/card speeds of `0.1` and `-0.05`. Praxis now uses those values for selected standalone photographs. The default Locomotive constructor and smooth-wheel behavior remain unchanged.
 
+Headings travel from 20% to -20% of their own height. Program and class-format cards use opposing start/end pairs (12/-12, -6/6, -12/12). Complete schedule panels travel from 8% to -8%. The supplied GSAP resource keeps its original `scrub: true` approach, now spanning the full viewport passage (`top bottom` to `bottom top`) instead of stopping at `top 35%`. Card grids and schedules have additional vertical clearance; the facility image has viewport-relative overscan to avoid exposing edges.
 - Home: academy/programs/instructor/location headings, program cards, schedule heading and panel; standalone academy and coach photography keeps Locomotive movement.
 - About: mission heading and its photo, plus the facility image.
 - Programs: overview/details headings, all program and class-format cards; newcomer and open-training photos use Locomotive.

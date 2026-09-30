@@ -19,10 +19,19 @@ it('assigns text and card motion without changing page content or separating cal
     expect(root.querySelectorAll('.schedule-day [data-parallax], .schedule-day[data-parallax]')).toHaveLength(0);
     for (const calendar of root.querySelectorAll('.schedule-grid')) {
       expect(calendar.getAttribute('data-parallax-kind')).toBe('calendar');
-      expect(calendar.getAttribute('data-parallax-end')).toBe('0');
+      expect(calendar.getAttribute('data-parallax-end')).toBe('-8');
     }
     for (const card of root.querySelectorAll('.program-card, .class-detail')) expect(card.getAttribute('data-parallax-kind')).toBe('card');
-    for (const element of elements) expect(element.getAttribute('data-parallax-disable')).toBe('mobileLandscape');
+    for (const element of elements) {
+      expect(element.getAttribute('data-parallax-disable')).toBe('mobileLandscape');
+      expect(element.getAttribute('data-parallax-scroll-end')).toBe('bottom top');
+      expect(Number(element.getAttribute('data-parallax-end'))).toBe(-Number(element.getAttribute('data-parallax-start')));
+    }
+    for (const grid of root.querySelectorAll('.program-grid, .class-detail-grid')) {
+      const starts = Array.from(grid.querySelectorAll('[data-parallax-start]'), el => Number(el.getAttribute('data-parallax-start')));
+      expect(starts.some(value => value > 0)).toBe(true);
+      expect(starts.some(value => value < 0)).toBe(true);
+    }
   }
 });
 it('reverts GSAP when reduced motion is enabled and cleans up on unmount', async () => {
