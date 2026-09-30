@@ -37,6 +37,12 @@ Each schedule moves as one panel, keeping times, day columns and borders togethe
 
 A ResizeObserver tracks section and header heights. A section taller than the viewport scrolls to its bottom before resting, preserving access to its full content. The final section remains in normal flow. Keyboard focus releases an underlay so its links can be scrolled into view. Section covers work at all viewport widths, including phones with native touch scrolling. With reduced motion or without measurement support, all layers remain in normal document flow. The separate GSAP text/card parallax still retains its original mobile breakpoint.
 
+## Footer parallax
+
+The supplied Osmo Footer Parallax Effect is integrated into the shared footer with its original `data-footer-parallax`, `data-footer-parallax-inner`, and `data-footer-parallax-dark` attributes. Its unchanged GSAP timeline shifts the footer from `yPercent: -25` to its resting position while the dark overlay fades from `0.5` to zero. ScrollTrigger retains `clamp(top bottom)`, `clamp(top top)`, and `scrub: true`.
+
+Only integration additions surround the supplied function: local ESM imports, a GSAP context for cleanup, and React initialization after fonts are ready. The existing Praxis footer content and design are retained, with the resource’s clipping wrapper and noninteractive, aria-hidden shade. Footer motion runs at all viewport widths; reduced motion reverts it to the static footer. At the document bottom the clamp completes the reveal even though this footer is shorter than the demo’s full-screen footer.
+
 ## Accessibility and lifecycle
 
 - `data-parallax-disable="mobileLandscape"` uses the supplied breakpoint to disable GSAP parallax at 767px and below. Locomotive retains its default native touch behavior.
@@ -45,6 +51,6 @@ A ResizeObserver tracks section and header heights. A section taller than the vi
 - The Gymdesk observer ignores unrelated animation-style changes.
 - Effect cleanup preserves static rendering and native scrolling if either animation library cannot initialize.
 
-Validation: 16 passing tests, TypeScript, production build, static routes/assets/anchors, real-browser initialization on all six routes with no overlapping animation owners or console errors, calendar transforms and aligned days, actual section-cover geometry on all six pages, preserved anchor navigation and keyboard focus recovery, and mobile breakpoint reversion with a readable two-column schedule. Existing tests cover booking pause/resume and reduced-motion lifecycle. No test leads were submitted.
+Validation: 18 passing tests, TypeScript, production build, static routes/assets/anchors, real-browser initialization on all six routes with no overlapping animation owners or console errors, calendar transforms and aligned days, actual section-cover geometry on all six pages, preserved anchor navigation and keyboard focus recovery, and mobile breakpoint reversion with a readable two-column schedule. Existing tests cover booking pause/resume and reduced-motion lifecycle. No test leads were submitted.
 
 Sources: [Locomotive Scroll v5](https://scroll.locomotive.ca/docs/), [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), and the user-supplied Osmo resource.

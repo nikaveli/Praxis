@@ -75,3 +75,9 @@ html.lenis{scroll-behavior:auto!important}
   /* Keyboard focus can bring a covered section back into normal document flow. */
   .section-flow[data-section-ready]>.section-layer[data-section-underlay]:has(:focus-visible){position:relative;top:auto}
 }
+
+/* Osmo footer reveal, independent of the alternating content-section covers. */
+.footer-wrap{position:relative;overflow:hidden;background:#101510}
+.footer-wrap>.site-footer{position:relative}
+.footer-wrap__dark{opacity:0;pointer-events:none;background-color:#201d1d;width:100%;height:100%;position:absolute;top:0;left:0}
+@media(prefers-reduced-motion:reduce){[data-footer-parallax-inner]{transform:none!important}[data-footer-parallax-dark]{opacity:0!important}}

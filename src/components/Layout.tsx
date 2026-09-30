@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { business, routes } from '../data/content';
 import { BookLink } from './Booking';
+import { useFooterParallax } from '../hooks/useFooterParallax';
 
 export function Logo({ footer = false }: { footer?: boolean }) {
   return <a className={`logo ${footer ? 'logo-footer' : ''}`} href="/" aria-label="Praxis Jiu Jitsu Academy home"><img src="/media/logo.webp" alt="Praxis Jiu Jitsu Academy" width="1000" height="350" /></a>;
@@ -32,11 +33,13 @@ export function Header({ path }: { path: string }) {
   </>;
 }
 export function Footer() {
-  return <footer className="site-footer">
+  const wrapper = useRef<HTMLDivElement>(null);
+  useFooterParallax(wrapper);
+  return <div ref={wrapper} data-footer-parallax="" className="footer-wrap"><footer data-footer-parallax-inner="" className="site-footer">
     <div className="container footer-main"><div><Logo footer /><p>{business.tagline}</p></div>
       <nav aria-label="Footer navigation">{routes.slice(1).map(r => <a key={r.path} href={r.path}>{r.label}</a>)}</nav>
       <div className="footer-contact"><a href={business.tel}>{business.phone}</a><a href={`mailto:${business.email}`}>{business.email}</a><a href={business.instagram} target="_blank" rel="noreferrer">Instagram ↗</a></div>
     </div>
     <div className="container footer-bottom"><span>© {new Date().getFullYear()} Praxis Jiu Jitsu Academy</span><span>Bernalillo, New Mexico</span><span>All rights reserved</span></div>
-  </footer>;
+  </footer><div data-footer-parallax-dark="" className="footer-wrap__dark" aria-hidden="true" /></div>;
 }

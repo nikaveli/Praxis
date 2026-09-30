@@ -1,3 +1,4 @@
+vi.mock('./animation/footerParallax.js', () => ({ mountFooterParallax: () => ({ revert: vi.fn() }) }));
 vi.mock('./animation/globalParallax.js', () => ({ initGlobalParallax: () => ({ revert: vi.fn() }) }));
 
 import { renderToStaticMarkup } from 'react-dom/server';

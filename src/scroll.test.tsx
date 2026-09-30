@@ -1,3 +1,4 @@
+vi.mock('./animation/footerParallax.js', () => ({ mountFooterParallax: () => ({ revert: vi.fn() }) }));
 import { act, cleanup, render, waitFor } from '@testing-library/react';
 import { App } from './App';
 import { useLocomotiveScroll } from './hooks/useLocomotiveScroll';
