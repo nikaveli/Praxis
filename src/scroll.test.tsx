@@ -1,7 +1,9 @@
 import { act, cleanup, render, waitFor } from '@testing-library/react';
 import { App } from './App';
-import { useLocomotiveScroll, motionSections } from './hooks/useLocomotiveScroll';
+import { useLocomotiveScroll } from './hooks/useLocomotiveScroll';
 import { routes } from './data/content';
+
+vi.mock('./animation/globalParallax.js', () => ({ initGlobalParallax: () => ({ revert: vi.fn() }) }));
 
 const scroll = vi.hoisted(() => ({ create: vi.fn(), stop: vi.fn(), start: vi.fn(), destroy: vi.fn() }));
 vi.mock('locomotive-scroll', () => ({ default: class {
@@ -23,14 +25,16 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); document.body.classList.remove('booking-open'); });
 
 function Fixture() {
-  useLocomotiveScroll('/contact/');
-  return <><main><section className="contact-intro"><div className="split"><div>Welcome</div></div></section></main><dialog className="booking-fallback" data-lenis-prevent="" /></>;
+  useLocomotiveScroll('/praxis-classes/');
+  return <><main><section className="newcomer"><div className="split"><img className="photo" alt="Training" /></div></section></main><dialog className="booking-fallback" data-lenis-prevent="" /></>;
 }
-it('enables motion on all six routes while leaving schedules untransformed', async () => {
+it('enables smooth scrolling on all six routes without competing for GSAP targets', async () => {
   for (const route of routes) {
     const view = render(<App path={route.path} />);
     await waitFor(() => expect(document.documentElement.classList.contains('praxis-motion')).toBe(true));
-    for (const selector of motionSections[route.path]) expect(view.container.querySelector(`${selector} [data-scroll]`)).not.toBeNull();
+    expect(view.container.querySelector('[data-scroll][data-parallax]')).toBeNull();
+    expect(view.container.querySelector('[data-parallax] [data-scroll]')).toBeNull();
+    expect(view.container.querySelector('[data-scroll] [data-parallax]')).toBeNull();
     expect(view.container.querySelector('.schedule-grid [data-scroll]')).toBeNull();
     view.unmount();
   }

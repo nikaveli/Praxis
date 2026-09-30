@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import type LocomotiveScroll from 'locomotive-scroll';
 
-// Alternating editorial sections; keep the schedule itself steady and readable.
+// Alternating editorial sections shared by the photo and content animation layers.
 export const motionSections: Record<string, string[]> = {
   '/': ['.community', '.programs', '.coaches', '.contact-section'],
   '/about/': ['.mission', '.facility-strip'],
@@ -10,7 +10,8 @@ export const motionSections: Record<string, string[]> = {
   '/praxis-classes/': ['.newcomer', '.free-class'],
   '/contact/': ['.contact-intro', '.values'],
 };
-const targets = '.section-heading, .split-copy, .community-picture, .mission-picture, .program-image, .coach-photo, .owners-photo, .contact-grid > div:first-child, .free-class-inner > div, .values-grid > article, .contact-intro .split > div, .newcomer .split > .photo, .facility-strip > .photo';
+// GSAP owns text, complete cards and schedule blocks; Locomotive owns only these photos.
+const targets = '.community-picture, .mission-picture, .coach-photo, .owners-photo, .newcomer .split > .photo, .facility-strip > .photo';
 
 export function useLocomotiveScroll(path: string) {
   useEffect(() => {

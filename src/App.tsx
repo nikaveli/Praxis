@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useGlobalParallax } from './hooks/useGlobalParallax';
 import { useLocomotiveScroll } from './hooks/useLocomotiveScroll';
 import { BookingProvider, BookLink } from './components/Booking';
 import { Header, Footer } from './components/Layout';
@@ -10,6 +11,7 @@ import { business, home, classes, normalizePath, routes } from './data/content';
 export function App({ path: originalPath = '/' }: { path?: string }) {
   const path = normalizePath(originalPath);
   useLocomotiveScroll(path);
+  useGlobalParallax(path);
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
     const observer = new IntersectionObserver(entries => {
