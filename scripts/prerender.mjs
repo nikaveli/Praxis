@@ -1,22 +1,39 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { render, routes } from '../.ssr/entry-server.js';
+import { render, routes, business, coaches, programs } from '../.ssr/entry-server.js';
+import { seoEnvironment, pageHead, sitemapFor, robotsFor, headersFor, schemaFor, productionOrigin } from './seo.mjs';
+
 const template = await readFile('dist/index.html', 'utf8');
-const origin = 'https://prxsjiujitsu.com';
-const publicOrigin = process.env.SITE_ORIGIN || 'https://praxis.nikaveli.workers.dev';
-const escape = s => s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+const config = seoEnvironment();
+const data = { business, coaches, programs };
 const extra = [
-  {path:'/design-review/', title:'Hero Treatments | Praxis Design Review',description:'Compare three homepage hero treatments.',noindex:true},
-  {path:'/404/', title:'Page Not Found | Praxis Jiu Jitsu',description:'Find your way back to Praxis Jiu Jitsu.',noindex:true},
+  { path: '/design-review/', title: 'Hero Treatments | Praxis Design Review', description: 'Compare three homepage hero treatments.', noindex: true },
+  { path: '/404/', title: 'Page Not Found | Praxis Jiu Jitsu', description: 'Find your way back to Praxis Jiu Jitsu.', noindex: true },
 ];
 for (const route of [...routes, ...extra]) {
-  const schema = { '@context':'https://schema.org', '@type':'SportsActivityLocation', name:'Praxis Jiu Jitsu Academy', url:origin, telephone:'+1-505-459-6188', email:'info@prxsjiujitsu.com', image:`${publicOrigin}/media/social.webp`, logo:`${publicOrigin}/media/logo.webp`, address:{'@type':'PostalAddress',streetAddress:'965 US Highway 550, Suite E',addressLocality:'Bernalillo',addressRegion:'NM',postalCode:'87004',addressCountry:'US'}, sameAs:['https://www.instagram.com/praxisjjacademy/'] };
-  const head = `<title>${escape(route.title)}</title>\n<meta name="description" content="${escape(route.description)}">\n<link rel="canonical" href="${origin}${route.path}">\n<meta property="og:type" content="website">\n<meta property="og:site_name" content="Praxis Jiu Jitsu Academy">\n<meta property="og:title" content="${escape(route.title)}">\n<meta property="og:description" content="${escape(route.description)}">\n<meta property="og:url" content="${origin}${route.path}">\n<meta property="og:image" content="${publicOrigin}/media/social.webp">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image">\n${route.noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}\n<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
-  const html = template.replace('<!--page-head-->',head).replace('<!--app-html-->',render(route.path));
-  const directory = `dist${route.path === '/' ? '' : route.path.replace(/\/$/,'')}`;
-  await mkdir(directory,{recursive:true});
-  await writeFile(`${directory}/index.html`,html);
-  if(route.path === '/404/') await writeFile('dist/404.html',html);
+  const html = template.replace('<!--page-head-->', pageHead(route, data, config)).replace('<!--app-html-->', render(route.path));
+  const directory = `dist${route.path === '/' ? '' : route.path.replace(/\/$/, '')}`;
+  await mkdir(directory, { recursive: true });
+  await writeFile(`${directory}/index.html`, html);
+  if (route.path === '/404/') await writeFile('dist/404.html', html);
 }
-await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(r=>`<url><loc>${origin}${r.path}</loc></url>`).join('')}</urlset>`);
-await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nDisallow: /design-review/\nSitemap: ${origin}/sitemap.xml\n`);
-console.log('Prerendered six content pages, design review and 404.');
+await writeFile('dist/sitemap.xml', sitemapFor(routes, config));
+await writeFile('dist/robots.txt', robotsFor(config));
+await writeFile('dist/_headers', headersFor(await readFile('public/_headers', 'utf8'), config));
+
+// Reviewable production exports; the functions above remain the source of truth.
+await mkdir('seo/structured-data', { recursive: true });
+const production = seoEnvironment({ SITE_ENV: 'production', SITE_ORIGIN: productionOrigin });
+await mkdir('seo/production', { recursive: true });
+await writeFile('seo/production/robots.txt', robotsFor(production));
+await writeFile('seo/production/sitemap.xml', sitemapFor(routes, production));
+await writeFile('seo/production/_headers', headersFor(await readFile('public/_headers', 'utf8'), production));
+const csv = value => `"${String(value).replaceAll('"', '""')}"`;
+await writeFile('seo/metadata.csv', [
+  ['route', 'canonical', 'title', 'title_characters', 'description', 'description_characters'].map(csv).join(','),
+  ...routes.map(route => [route.path, `${productionOrigin}${route.path}`, route.title, route.title.length, route.description, route.description.length].map(csv).join(',')),
+].join('\n') + '\n');
+for (const route of routes) {
+  const name = route.path === '/' ? 'home' : route.path.split('/')[1];
+  await writeFile(`seo/structured-data/${name}.json`, JSON.stringify(schemaFor(route, data, production), null, 2) + '\n');
+}
+console.log(`Prerendered six content pages, design review and 404 (${config.mode}; indexing ${config.indexable ? 'enabled' : 'disabled'}).`);

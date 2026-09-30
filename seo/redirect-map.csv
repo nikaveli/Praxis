@@ -1,0 +1,10 @@
+source,destination,action,evidence
+https://prxsjiujitsu.com/,https://prxsjiujitsu.com/,Preserve URL; no redirect,Confirmed live source inventory
+https://prxsjiujitsu.com/praxis-classes/,https://prxsjiujitsu.com/praxis-classes/,Preserve URL; no redirect,Confirmed live source inventory
+https://prxsjiujitsu.com/#about,https://prxsjiujitsu.com/#about,Preserve anchor in HTML,Confirmed source inventory; fragments are not sent to server
+https://prxsjiujitsu.com/#programs,https://prxsjiujitsu.com/#programs,Preserve anchor in HTML,Confirmed source inventory
+https://prxsjiujitsu.com/#schedule,https://prxsjiujitsu.com/#schedule,Preserve anchor in HTML,Confirmed source inventory
+https://prxsjiujitsu.com/#instructors,https://prxsjiujitsu.com/#instructors,Preserve anchor in HTML,Confirmed source inventory
+https://prxsjiujitsu.com/#contact,https://prxsjiujitsu.com/#contact,Preserve anchor in HTML,Confirmed source inventory
+https://prxsjiujitsu.com/#content,https://prxsjiujitsu.com/#content,Preserve anchor in HTML,Confirmed source inventory
+Other WordPress URLs,TBD,Obtain full sitemap and Search Console export before launch,Do not guess URL mappings or deploy catch-all redirects

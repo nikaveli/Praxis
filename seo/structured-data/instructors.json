@@ -1,0 +1,80 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "@id": "https://prxsjiujitsu.com/#academy",
+      "name": "Praxis Jiu Jitsu Academy",
+      "url": "https://prxsjiujitsu.com/",
+      "description": "Family-owned Jiu Jitsu academy for kids and adults in Bernalillo, New Mexico.",
+      "telephone": "+1-505-459-6188",
+      "email": "info@prxsjiujitsu.com",
+      "image": "https://prxsjiujitsu.com/media/social.webp",
+      "logo": "https://prxsjiujitsu.com/media/logo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "965 US Highway 550, Suite E",
+        "addressLocality": "Bernalillo",
+        "addressRegion": "NM",
+        "postalCode": "87004",
+        "addressCountry": "US"
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Praxis+Jiu+Jitsu+Academy+965+US+550+Bernalillo+NM",
+      "sameAs": [
+        "https://www.instagram.com/praxisjjacademy/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://prxsjiujitsu.com/#website",
+      "url": "https://prxsjiujitsu.com/",
+      "name": "Praxis Jiu Jitsu Academy",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://prxsjiujitsu.com/instructors/#webpage",
+      "url": "https://prxsjiujitsu.com/instructors/",
+      "name": "Jiu Jitsu Instructors in Bernalillo | Darien & Nikki Molina",
+      "description": "Meet Darien and Nikki Molina at Praxis Jiu Jitsu in Bernalillo. Learn about the coaches leading adult, kids and women’s programs, and try your first class free.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://prxsjiujitsu.com/#website"
+      },
+      "about": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      },
+      "mainEntity": [
+        {
+          "@id": "https://prxsjiujitsu.com/instructors/#darien"
+        },
+        {
+          "@id": "https://prxsjiujitsu.com/instructors/#nikki"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://prxsjiujitsu.com/instructors/#darien",
+      "name": "Darien Molina",
+      "description": "Darien brings over 10 years of training and competitive experience to the adult program. His instruction emphasizes fundamentals, technical problem-solving, and applying techniques in practice.",
+      "jobTitle": "Head Coach · Adult Program",
+      "worksFor": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://prxsjiujitsu.com/instructors/#nikki",
+      "name": "Nikki Molina",
+      "description": "Nikki is a black belt with over 10 years of experience across kids, adult, and women's programs. She leads the kids and women's programs with an emphasis on clear instruction, controlled practice, and skill development.",
+      "jobTitle": "Black Belt · Kids & Women's Programs",
+      "worksFor": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Production
+User-agent: *
+Allow: /
+
+Sitemap: https://prxsjiujitsu.com/sitemap.xml

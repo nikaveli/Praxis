@@ -8,3 +8,5 @@ Assets/
 *.log
 coverage/
 artifacts/
+
+!.env*.example

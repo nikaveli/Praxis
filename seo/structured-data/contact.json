@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "@id": "https://prxsjiujitsu.com/#academy",
+      "name": "Praxis Jiu Jitsu Academy",
+      "url": "https://prxsjiujitsu.com/",
+      "description": "Family-owned Jiu Jitsu academy for kids and adults in Bernalillo, New Mexico.",
+      "telephone": "+1-505-459-6188",
+      "email": "info@prxsjiujitsu.com",
+      "image": "https://prxsjiujitsu.com/media/social.webp",
+      "logo": "https://prxsjiujitsu.com/media/logo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "965 US Highway 550, Suite E",
+        "addressLocality": "Bernalillo",
+        "addressRegion": "NM",
+        "postalCode": "87004",
+        "addressCountry": "US"
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Praxis+Jiu+Jitsu+Academy+965+US+550+Bernalillo+NM",
+      "sameAs": [
+        "https://www.instagram.com/praxisjjacademy/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://prxsjiujitsu.com/#website",
+      "url": "https://prxsjiujitsu.com/",
+      "name": "Praxis Jiu Jitsu Academy",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://prxsjiujitsu.com/contact/#webpage",
+      "url": "https://prxsjiujitsu.com/contact/",
+      "name": "Contact Praxis Jiu Jitsu | Free Class in Bernalillo, NM",
+      "description": "Request your free first class at Praxis Jiu Jitsu in Bernalillo. Visit 965 US Highway 550, Suite E, call or text 505-459-6188, or email info@prxsjiujitsu.com.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://prxsjiujitsu.com/#website"
+      },
+      "about": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    }
+  ]
+}

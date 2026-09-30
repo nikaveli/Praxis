@@ -1,0 +1,21 @@
+keyword,estimated_difficulty_editorial,opportunity,current_ranking,demand_signal,intent,target_route,content_type,role
+jiu jitsu Bernalillo,Moderate,High,Not measured,Not measured,Commercial,/,Academy homepage,Primary
+Brazilian jiu jitsu Bernalillo NM,Moderate,High,Not measured,Not measured,Commercial,/,Academy homepage,Secondary
+BJJ Bernalillo,Moderate,High,Not measured,Not measured,Commercial,/,Academy homepage,Secondary
+kids jiu jitsu Bernalillo,Moderate,High,Not measured,Not measured,Commercial,/programs/,Kids program section,Primary
+adult jiu jitsu Bernalillo,Moderate,High,Not measured,Not measured,Commercial,/programs/,Adult program section,Secondary
+beginner jiu jitsu Bernalillo,Moderate,High,Not measured,Not measured,Commercial,/programs/,Beginner guidance,Secondary
+jiu jitsu class schedule Bernalillo,Easy–moderate,High,Not measured,Not measured,Transactional,/praxis-classes/,Weekly schedule,Primary
+free jiu jitsu class Bernalillo,Moderate,High,Not measured,Not measured,Transactional,/contact/,Free-class inquiry,Primary
+Praxis jiu jitsu schedule,Easy,High,Not measured,Not measured,Navigational,/praxis-classes/,Weekly schedule,Secondary
+Praxis jiu jitsu contact,Easy,High,Not measured,Not measured,Navigational,/contact/,Contact details,Secondary
+no gi jiu jitsu Bernalillo,Easy–moderate,High,Not measured,Not measured,Commercial,/programs/,No-Gi section,Secondary
+jiu jitsu for kids ages 5 to 12 Bernalillo,Easy–moderate,High,Not measured,Not measured,Commercial,/programs/,Kids details,Long-tail
+open mat Bernalillo,Easy–moderate,Medium,Not measured,Not measured,Transactional,/praxis-classes/,Friday visitor details,Long-tail
+Saturday no gi Bernalillo,Easy–moderate,Medium,Not measured,Not measured,Transactional,/praxis-classes/,Saturday session,Long-tail
+women’s jiu jitsu Bernalillo,Moderate,Medium,Not measured,Not measured,Commercial,/programs/,Women’s program; timing requires confirmation,Secondary
+jiu jitsu instructors Bernalillo,Easy–moderate,Medium,Not measured,Not measured,Commercial,/instructors/,Instructor biographies,Primary
+family owned jiu jitsu academy Bernalillo,Easy–moderate,Medium,Not measured,Not measured,Commercial,/about/,Academy story,Primary
+what to wear to first jiu jitsu class,Hard,Medium,Not measured,Not measured,Informational,/praxis-classes/,First-class guidance,Question
+do I need a gi for my first class,Moderate–hard,Medium,Not measured,Not measured,Informational,/praxis-classes/,Newcomer answer,Question
+Gi vs No-Gi jiu jitsu for beginners,Hard,Medium,Not measured,Not measured,Informational,/programs/,Comparison guide section,Question

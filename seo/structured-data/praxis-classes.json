@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "@id": "https://prxsjiujitsu.com/#academy",
+      "name": "Praxis Jiu Jitsu Academy",
+      "url": "https://prxsjiujitsu.com/",
+      "description": "Family-owned Jiu Jitsu academy for kids and adults in Bernalillo, New Mexico.",
+      "telephone": "+1-505-459-6188",
+      "email": "info@prxsjiujitsu.com",
+      "image": "https://prxsjiujitsu.com/media/social.webp",
+      "logo": "https://prxsjiujitsu.com/media/logo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "965 US Highway 550, Suite E",
+        "addressLocality": "Bernalillo",
+        "addressRegion": "NM",
+        "postalCode": "87004",
+        "addressCountry": "US"
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Praxis+Jiu+Jitsu+Academy+965+US+550+Bernalillo+NM",
+      "sameAs": [
+        "https://www.instagram.com/praxisjjacademy/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://prxsjiujitsu.com/#website",
+      "url": "https://prxsjiujitsu.com/",
+      "name": "Praxis Jiu Jitsu Academy",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://prxsjiujitsu.com/praxis-classes/#webpage",
+      "url": "https://prxsjiujitsu.com/praxis-classes/",
+      "name": "Jiu Jitsu Class Schedule in Bernalillo, NM | Praxis",
+      "description": "See Monday–Saturday Jiu Jitsu class times at Praxis in Bernalillo. Kids, adult beginners, Gi, No-Gi and open training. Find your class and request a free trial.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://prxsjiujitsu.com/#website"
+      },
+      "about": {
+        "@id": "https://prxsjiujitsu.com/#academy"
+      }
+    }
+  ]
+}

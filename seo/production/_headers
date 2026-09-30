@@ -8,3 +8,9 @@
 
 /media/*
   Cache-Control: public, max-age=86400
+
+/design-review/*
+  X-Robots-Tag: noindex, nofollow
+
+/404*
+  X-Robots-Tag: noindex, nofollow

@@ -74,12 +74,12 @@ export const openTraining = {
   ],
 };
 export const routes = [
-  { path: '/', label: 'Home', title: 'Praxis Jiu Jitsu Academy | Bernalillo, NM', description: home.intro },
-  { path: '/about/', label: 'About', title: 'About Our Academy | Praxis Jiu Jitsu', description: 'Black belt founded. Family owned. Community driven. Discover Praxis Jiu Jitsu in Bernalillo, New Mexico.' },
-  { path: '/programs/', label: 'Programs', title: 'Jiu Jitsu Programs for Kids & Adults | Praxis', description: 'Explore adult, kids and women’s Jiu Jitsu at Praxis in Bernalillo. Learn about beginner, Gi, No-Gi and open-training classes.' },
-  { path: '/instructors/', label: 'Instructors', title: 'Meet Darien & Nikki Molina | Praxis Instructors', description: 'Meet Darien and Nikki Molina, the instructors behind the adult, kids and women’s programs at Praxis Jiu Jitsu Academy.' },
-  { path: '/praxis-classes/', label: 'Classes', title: 'Weekly Class Schedule | Praxis Jiu Jitsu', description: 'Monday–Saturday Jiu Jitsu classes in Bernalillo. Kids, adult beginners, Gi, No-Gi and open training. Your first class is free.' },
-  { path: '/contact/', label: 'Contact', title: 'Contact & Free Trial | Praxis Jiu Jitsu', description: 'Visit Praxis at 965 US Highway 550, Suite E, Bernalillo, NM. Call 505-459-6188 or sign up for a free first class.' },
+  { path: '/', label: 'Home', title: 'Jiu Jitsu in Bernalillo, NM | Praxis Jiu Jitsu Academy', description: 'Train Jiu Jitsu in Bernalillo at Praxis. Adult, kids, beginner, Gi and No-Gi classes with Darien and Nikki Molina. View the schedule and try your first class.' },
+  { path: '/about/', label: 'About', title: 'About Praxis Jiu Jitsu Academy | Bernalillo, New Mexico', description: 'Get to know Praxis, a family-owned Jiu Jitsu academy in Bernalillo. Explore our approach to training, community and floating-platform mats. Try a free class.' },
+  { path: '/programs/', label: 'Programs', title: 'Kids & Adult Jiu Jitsu Programs in Bernalillo | Praxis', description: 'Explore adult, kids ages 5–12 and women’s Jiu Jitsu at Praxis in Bernalillo. Find beginner, Gi and No-Gi training options, then request your free first class.' },
+  { path: '/instructors/', label: 'Instructors', title: 'Jiu Jitsu Instructors in Bernalillo | Darien & Nikki Molina', description: 'Meet Darien and Nikki Molina at Praxis Jiu Jitsu in Bernalillo. Learn about the coaches leading adult, kids and women’s programs, and try your first class free.' },
+  { path: '/praxis-classes/', label: 'Classes', title: 'Jiu Jitsu Class Schedule in Bernalillo, NM | Praxis', description: 'See Monday–Saturday Jiu Jitsu class times at Praxis in Bernalillo. Kids, adult beginners, Gi, No-Gi and open training. Find your class and request a free trial.' },
+  { path: '/contact/', label: 'Contact', title: 'Contact Praxis Jiu Jitsu | Free Class in Bernalillo, NM', description: 'Request your free first class at Praxis Jiu Jitsu in Bernalillo. Visit 965 US Highway 550, Suite E, call or text 505-459-6188, or email info@prxsjiujitsu.com.' },
 ];
 export function normalizePath(path: string) { return path === '/' ? '/' : `${path.replace(/\/$/, '')}/`; }
 export function timesFor(name: string) {
