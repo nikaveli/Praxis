@@ -653,5 +653,24 @@
         "bytes": 206664
       }
     ]
+  },
+  "kidsNoGiAnnouncement": {
+    "source": "IMG_3188.JPG",
+    "width": 1024,
+    "height": 1024,
+    "derivatives": [
+      {
+        "file": "kidsNoGiAnnouncement-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 38010
+      },
+      {
+        "file": "kidsNoGiAnnouncement-1024.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 68320
+      }
+    ]
   }
 }

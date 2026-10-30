@@ -46,3 +46,7 @@ Paths below are relative to `Assets/PRAXIS`. `iCloud/` abbreviates `iCloud Photo
 - Shared content remains centralized, while Programs and Classes use separate photography selections in `src/data/photography.ts`.
 - The supplied logo remains consistent in shared navigation/footer. The homepage video/poster is intentionally also available in the separate design-review page.
 - `npm run check` verifies that each photo source is used only once across all six public routes and that all referenced assets exist. Visual review checks subject relevance and crop, which file-identity checks alone cannot establish.
+
+## October 30, 2026 addition
+
+Classes / Friday Kids No-Gi announcement uses `kidsNoGiAnnouncement`, from owner-supplied `IMG_3188.JPG`. The original is preserved in `Assets/PRAXIS`; 640px and 1024px WebP derivatives are published. The entire square image and its lettering remain visible, with matching accessible HTML class details beside it. This brings the public site to 27 distinct photo placements. The image appears only on Classes.

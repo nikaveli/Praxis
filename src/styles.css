@@ -134,3 +134,7 @@ body .maonrails-popup .booking-next-step{font:400 16px/1.5 var(--body);color:var
   .hero-foot{gap:8px}
   .scroll-hint{gap:8px}
 }
+
+/* Keep the supplied class announcement fully visible, including its lettering. */
+.open-training .kids-nogi-announcement>.photo{height:auto;aspect-ratio:1;object-fit:contain}
+.session .session-start time{display:inline;font:inherit;letter-spacing:inherit;color:inherit}

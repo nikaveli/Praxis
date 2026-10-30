@@ -21,7 +21,7 @@ These are original editorial briefs, not automatically published pages. They bui
 - **Primary query:** “kids Jiu Jitsu Bernalillo”.
 - **Why:** Kids training is a major visible category at both reviewed local competitors. Praxis has relevant photography, a named coach and concrete age/schedule details.
 - **Suggested heading:** “Kids Jiu Jitsu in Bernalillo, ages 5–12”.
-- **Outline:** Age range; Coach Nikki; supervised drills, movement games and guided partner practice; Tuesday/Thursday 5 PM; how to ask about a first class; current program benefits without guarantees.
+- **Outline:** Age range; Coach Nikki; supervised drills, movement games and guided partner practice; Tuesday/Thursday 5 PM and Friday Kids No-Gi at 5 PM starting November 6, 2026; how to ask about a first class; current program benefits without guarantees.
 - **Proof to collect:** Owner-approved lesson description and consented original training photos. Use existing unique photography where possible.
 - **Confirm before adding:** Parent observation policy, sibling arrangements, equipment, class duration, trial/check-in requirements. Avoid claims that training guarantees bullying prevention or particular health outcomes.
 - **Links / CTA:** Nikki's biography, weekly schedule, free-class contact.

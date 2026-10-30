@@ -29,7 +29,7 @@ Captured from the live browser on 2026-09-30. Sources: https://prxsjiujitsu.com/
 
 - Every email uses info@prxsjiujitsu.com. The old homepage contact label used this address but linked to praxisjjacademy@gmail.com.
 - Six independent pages, preserving existing homepage anchors and /praxis-classes/.
-- All schedule references share one dataset: Mon/Wed 6 PM Gi; Tue/Thu 5 PM kids, 6 PM beginners, 7 PM No-Gi; Fri 6 PM live training; Sat 11 AM all-level No-Gi.
+- All schedule references share one dataset: Mon/Wed 6 PM Gi; Tue/Thu 5 PM kids, 6 PM beginners, 7 PM No-Gi; Fri 5 PM Kids No-Gi (starts November 6, 2026), 6 PM live training; Sat 11 AM all-level No-Gi.
 - No invented prices, women's schedule, credentials or testimonials.
 
 ## Link inventory
@@ -51,3 +51,7 @@ The original source copy was transcribed into src/data/content.ts. The current f
 The user requested removal of “people pulling for you” and similar sentimental wording across the site. Meru BJJ (https://www.merubjj.com/) and Del Mar Jiu-Jitsu Club (https://www.delmarjiujitsuclub.com/) were reviewed for messaging direction. The revised Praxis copy is original and emphasizes classes, instruction, fundamentals, technique, and how to start training. No competitor claims, prices, credentials, or slogans were adopted.
 
 Updated the homepage hero, academy and mission sections, values, program descriptions, instructor introductions and biographies, newcomer guidance, class descriptions, and page metadata. All existing sections, academy facts, schedule times, and contact/booking destinations remain represented. Original wording in the inventory above is retained only as a historical source record.
+
+## October 30, 2026 schedule update
+
+Owner-confirmed: Kids No-Gi begins Friday, November 6, 2026, at 5 PM, recurring Fridays. Shared Home/Classes schedules, Home/Programs kids cards, and Programs/Classes kids details include the start date. Classes has a dedicated photo announcement immediately before Friday Live Training; the existing Friday 6 PM open training remains unchanged.

@@ -24,13 +24,22 @@ export const values = [
   { name: 'Consistency', text: 'Build your skills through regular classes, focused drilling, and practice.' },
   { name: 'Community', text: 'A family-owned academy for kids and adults. All experience levels are welcome.' },
 ];
+export const kidsNoGi = {
+  name: 'Kids No-Gi', day: 'Friday', time: '5:00 PM', startsOn: '2026-11-06',
+  photo: 'kidsNoGiAnnouncement',
+  photoAlt: 'Kids training at Praxis. Announcement: new Kids No-Gi class, Fridays at 5 PM.',
+};
+export function startDateLabel(date: string) {
+  return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
+}
+export const kidsNoGiAnnouncement = `${kidsNoGi.name} starts ${startDateLabel(kidsNoGi.startsOn)} — ${kidsNoGi.day}s at ${kidsNoGi.time}.`;
 export const programs = [
   { name: 'Adult BJJ', image: 'adults', alt: 'Two adult students rolling during a Praxis Jiu Jitsu class', text: 'Learn positions, escapes, and submissions through technical instruction and partner practice. Beginner, Gi, and No-Gi classes offer options for new and experienced students.' },
-  { name: 'Kids BJJ', image: 'kids', alt: 'Young students drilling takedowns while a coach supervises at Praxis Jiu Jitsu', text: 'Supervised classes for ages 5–12 use drills, movement games, and partner work to teach Jiu Jitsu. Students practice coordination, focus, discipline, and respect for others.' },
+  { name: 'Kids BJJ', image: 'kids', alt: 'Young students drilling takedowns while a coach supervises at Praxis Jiu Jitsu', text: `Supervised classes for ages 5–12 use drills, movement games, and partner work to teach Jiu Jitsu. Students practice coordination, focus, discipline, and respect for others. ${kidsNoGiAnnouncement}` },
   { name: "Women's BJJ", image: 'women', alt: 'Two women training together under the Praxis Jiu Jitsu Academy banner', text: 'Jiu Jitsu and self-defense instruction for women, led by Coach Nikki Molina. Learn grappling techniques, practice with training partners, and develop your skills on the mats.' },
 ];
 export type ClassKind = 'kids' | 'beginners' | 'gi' | 'nogi' | 'open';
-export type Session = { time: string; name: string; detail?: string; kind: ClassKind };
+export type Session = { time: string; name: string; detail?: string; kind: ClassKind; startsOn?: string };
 const gi: Session = { time: '6:00 PM', name: 'Adult Gi', detail: 'Intermediate', kind: 'gi' };
 const evening: Session[] = [
   { time: '5:00 PM', name: 'Kids Class', kind: 'kids' },
@@ -40,7 +49,10 @@ const evening: Session[] = [
 export const schedule: { day: string; sessions: Session[] }[] = [
   { day: 'Monday', sessions: [gi] }, { day: 'Tuesday', sessions: evening },
   { day: 'Wednesday', sessions: [gi] }, { day: 'Thursday', sessions: evening },
-  { day: 'Friday', sessions: [{ time: '6:00 PM', name: 'Live Training', detail: 'All schools welcome', kind: 'open' }] },
+  { day: kidsNoGi.day, sessions: [
+    { name: kidsNoGi.name, time: kidsNoGi.time, startsOn: kidsNoGi.startsOn, kind: 'kids' },
+    { time: '6:00 PM', name: 'Live Training', detail: 'All schools welcome', kind: 'open' },
+  ] },
   { day: 'Saturday', sessions: [{ time: '11:00 AM', name: 'All Levels No-Gi', detail: 'Beginners welcome', kind: 'nogi' }] },
 ];
 export const coaches = [

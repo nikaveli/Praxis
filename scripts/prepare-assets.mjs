@@ -28,12 +28,13 @@ const assets = {
   classGathering: `${icloud}/IMG_1323.jpg`,
   entrance: 'Praxis_Jiu_Jitsu_Academy_interior-16.jpg',
   visitorSeating: 'Praxis_Jiu_Jitsu_Academy_interior-12.jpg',
+  kidsNoGiAnnouncement: 'IMG_3188.JPG',
 };
 const manifest = {};
 for (const [name, file] of Object.entries(assets)) {
   const meta = await sharp(`${source}/${file}`).metadata();
   manifest[name] = { source: file, width: meta.width, height: meta.height, derivatives: [] };
-  for (const width of [640, 1280, 1920]) {
+  for (const width of name === 'kidsNoGiAnnouncement' ? [640, 1024] : [640, 1280, 1920]) {
     const output = `${name}-${width}.webp`;
     const info = await sharp(`${source}/${file}`).rotate().resize({ width, withoutEnlargement: true }).webp({ quality: 82 }).toFile(`${out}/${output}`);
     manifest[name].derivatives.push({ file: output, width: info.width, height: info.height, bytes: info.size });

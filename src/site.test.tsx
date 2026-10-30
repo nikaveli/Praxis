@@ -60,9 +60,31 @@ describe('migration acceptance', () => {
   it('renders identical schedules on both pages with the approved times', () => {
     const docs = ['/', '/praxis-classes/'].map(path=>new DOMParser().parseFromString(renderToStaticMarkup(<App path={path} />),'text/html'));
     expect(docs[0].querySelector('.schedule-grid')?.textContent).toBe(docs[1].querySelector('.schedule-grid')?.textContent);
-    expect(schedule.flatMap(d=>d.sessions)).toHaveLength(10);
+    expect(schedule.flatMap(d=>d.sessions)).toHaveLength(11);
     expect(schedule[1].sessions.map(s=>s.time)).toEqual(['5:00 PM','6:00 PM','7:00 PM']);
     expect(schedule[5].sessions[0]).toMatchObject({name:'All Levels No-Gi',time:'11:00 AM'});
+  });
+  it('announces Friday Kids No-Gi from November 6 without replacing existing classes', () => {
+    expect(schedule.find(day => day.day === 'Friday')?.sessions).toEqual([
+      { name: 'Kids No-Gi', time: '5:00 PM', startsOn: '2026-11-06', kind: 'kids' },
+      { name: 'Live Training', time: '6:00 PM', detail: 'All schools welcome', kind: 'open' },
+    ]);
+    for (const path of ['/', '/programs/', '/praxis-classes/']) {
+      const doc = new DOMParser().parseFromString(renderToStaticMarkup(<App path={path} />), 'text/html');
+      expect(doc.body.textContent).toContain('Kids No-Gi starts November 6, 2026 — Fridays at 5:00 PM.');
+      if (path !== '/programs/') {
+        const friday = Array.from(doc.querySelectorAll('.schedule-day')).find(day => day.querySelector('h3')?.textContent === 'Friday')!;
+        expect(friday.querySelector('time[datetime="2026-11-06"]')?.textContent).toBe('November 6, 2026');
+        expect(friday.textContent).toContain('5:00 PMKids No-Gi');
+        expect(friday.textContent).toContain('6:00 PMLive Training');
+      }
+      if (path === '/praxis-classes/') {
+        const announcement = doc.querySelector('#kids-no-gi')!;
+        expect(announcement.querySelector('img')?.getAttribute('src')).toContain('kidsNoGiAnnouncement-1024.webp');
+        expect(announcement.textContent).toContain('Friday · 5:00 PM');
+        expect(announcement.nextElementSibling?.textContent).toContain('Friday Live Training');
+      }
+    }
   });
   it('provides six pages, a single primary heading per page, and preserved anchors', () => {
     expect(routes).toHaveLength(6);
