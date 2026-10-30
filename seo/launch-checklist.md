@@ -2,17 +2,16 @@
 
 ## Current state
 
-The preview is published at `https://praxis.nikaveli.workers.dev/`. The existing WordPress domain `https://prxsjiujitsu.com/` remains live. Preview noindex is intentional and must not be reported as an SEO defect. Domain launch requires the owner's explicit authorization; this SEO delivery does not change DNS or production bindings.
+The owner authorized launch on October 30, 2026. The rebuilt site is deployed to `https://prxsjiujitsu.com/`; see `docs/domain-launch.md`. The Workers alternate host remains noindex through a hostname-specific response header. The checklist below records the original preparation workflow; subsequent launches must preserve the live-domain policy.
 
 ## Preview build
 
 ```sh
-npm run check
-npx wrangler deploy
-npm run check:seo:live
+SITE_ENV=preview npm run check
+# Deploy review builds only to a separate preview project.
 ```
 
-Defaults: `SITE_ENV=preview`, `SITE_ORIGIN=https://praxis.nikaveli.workers.dev`. Keep the Git-connected preview project's build environment in preview mode. HTML and HTTP responses carry noindex. The production schema exports in `seo/structured-data/` are review copies, not the preview's served asset URLs.
+Defaults after launch: `SITE_ENV=production`, `SITE_ORIGIN=https://prxsjiujitsu.com`. Use `SITE_ENV=preview` explicitly for a separate review build. Do not deploy a preview build to the live Worker. The production schema exports in `seo/structured-data/` are review copies, not the preview's served asset URLs.
 
 ## Prepare for the authorized live-domain launch
 
@@ -39,7 +38,7 @@ Inspect the resulting output before deployment:
 - `robots.txt` permits crawling and advertises `https://prxsjiujitsu.com/sitemap.xml`.
 - `sitemap.xml` contains exactly six canonical URLs; no review or 404 pages.
 - `dist/_headers` has no site-wide noindex rule. Design-review and 404 rules remain.
-- Restore preview output with `npm run build` before any subsequent deployment to the preview project.
+- Production is now the default. Never deploy an explicit preview build to the live Worker.
 
 ## Immediately after cutover
 

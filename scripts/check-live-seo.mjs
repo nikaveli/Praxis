@@ -38,7 +38,7 @@ await Promise.all(routes.map(async route => {
   if (response.status !== 200) failures.push(`${route.path}: HTTP ${response.status}`);
   if (doc.title !== route.title) failures.push(`${route.path}: stale or incorrect title`);
   if (canonical !== config.canonicalOrigin + route.path) failures.push(`${route.path}: wrong canonical`);
-  if (robots.includes('noindex') === config.indexable) failures.push(`${route.path}: wrong HTML indexing policy`);
+  if (config.indexable && robots.includes('noindex')) failures.push(`${route.path}: wrong HTML indexing policy`);
   if (header.includes('noindex') === config.indexable) failures.push(`${route.path}: wrong HTTP indexing policy`);
   if (!graph?.some(node => node['@type'] === 'SportsActivityLocation')) failures.push(`${route.path}: missing academy graph`);
   results.push({ route: route.path, status: response.status, title: doc.title, canonical, robots, header });

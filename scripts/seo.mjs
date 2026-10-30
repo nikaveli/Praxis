@@ -2,9 +2,9 @@ export const productionOrigin = 'https://prxsjiujitsu.com';
 export const previewOrigin = 'https://praxis.nikaveli.workers.dev';
 
 export function seoEnvironment(env = process.env) {
-  const mode = env.SITE_ENV || 'preview';
+  const mode = env.SITE_ENV || 'production';
   if (!['preview', 'production'].includes(mode)) throw new Error('SITE_ENV must be preview or production');
-  const origin = new URL(env.SITE_ORIGIN || previewOrigin);
+  const origin = new URL(env.SITE_ORIGIN || (mode === 'production' ? productionOrigin : previewOrigin));
   if (origin.protocol !== 'https:' || origin.username || origin.password || origin.pathname !== '/' || origin.search || origin.hash) {
     throw new Error('SITE_ORIGIN must be an HTTPS origin without a path, query, credentials, or fragment');
   }

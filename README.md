@@ -29,9 +29,11 @@ The account already contained a GitHub-connected **Worker named `praxis`**. This
 - Build command: `npm run build`.
 - Deploy command: `npx wrangler deploy`.
 - Static output: `dist` (configured in `wrangler.jsonc`).
-- Preview uses the Cloudflare workers.dev hostname. No custom domain or DNS changes are made.
+- Live domain: `https://prxsjiujitsu.com/`, bound to `praxis` in `wrangler.jsonc`.
+- Bluehost registration delegates DNS to `lewis.ns.cloudflare.com` and `priscilla.ns.cloudflare.com`.
+- Cloudflare redirects HTTP and www to the canonical HTTPS apex, preserving paths and queries.
 
-The default build deliberately returns `X-Robots-Tag: noindex, nofollow` and matching HTML robots metadata. `scripts/seo.mjs` generates the indexing policy; `public/_headers` holds shared security/cache headers. Canonicals and the sitemap point to the eventual live domain. Social-image URLs use the working preview host until launch. An approved live build requires both `SITE_ENV=production` and `SITE_ORIGIN=https://prxsjiujitsu.com`; production mode rejects other origins. Do not enable it on the preview project. Never connect the live domain merely to publish a preview.
+The default build now targets production: indexable HTML, live-domain social images, and sitemap discovery. `SITE_ENV=preview npm run build` explicitly produces a non-indexable review build. Production rejects any origin other than `https://prxsjiujitsu.com`. Host-specific headers keep all Workers development/version URLs noindex even when they serve production HTML. Design-review and error pages also remain noindex. The Git-connected build has no environment overrides, so normal main-branch pushes retain the production policy.
 
 ## SEO files
 

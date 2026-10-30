@@ -8,3 +8,7 @@
 
 /media/*
   Cache-Control: public, max-age=86400
+
+# Keep alternate Workers hosts out of search results after the domain launch.
+https://:version.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex, nofollow

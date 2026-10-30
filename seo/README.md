@@ -1,6 +1,6 @@
 # Praxis SEO package
 
-Prepared September 30, 2026 for [Praxis Jiu Jitsu Academy](https://prxsjiujitsu.com/), Bernalillo, NM. The rebuild remains on the [Cloudflare preview](https://praxis.nikaveli.workers.dev/). The live domain has not been switched.
+Prepared September 30, 2026 for [Praxis Jiu Jitsu Academy](https://prxsjiujitsu.com/), Bernalillo, NM. Launched October 30, 2026 on Cloudflare at [prxsjiujitsu.com](https://prxsjiujitsu.com/). The Workers preview remains available with host-specific noindex protection.
 
 ## Files
 
@@ -31,7 +31,7 @@ Prepared September 30, 2026 for [Praxis Jiu Jitsu Academy](https://prxsjiujitsu.
 
 ## Defaults
 
-The normal build is **preview mode**, with `noindex, nofollow` in both HTML and HTTP headers. Canonicals use the final domain; social media images use the working preview host. Production mode requires explicit settings and uses the live domain throughout. Robots permits crawling so crawlers can read the noindex directives. Private design-review and 404 pages remain noindex in either mode.
+The normal build is **production mode**, using the live domain throughout. Explicit `SITE_ENV=preview` builds remain noindex. Host-specific HTTP headers keep Workers development/version hosts noindex regardless of the build mode. Robots permits crawling so crawlers can read the noindex directives. Private design-review and 404 pages remain noindex in either mode.
 
 The public sitemap lists only the six intended canonical pages. It intentionally omits `lastmod` until an accurate per-page editorial history is maintained, and does not invent freshness dates. Preview robots does not advertise the production sitemap.
 

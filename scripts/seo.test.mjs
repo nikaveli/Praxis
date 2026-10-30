@@ -1,20 +1,27 @@
 // @vitest-environment node
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
 import { business, coaches, programs, routes } from '../src/data/content';
 import { seoEnvironment, pageHead, schemaFor, robotsFor, headersFor, sitemapFor, productionOrigin } from './seo.mjs';
 
 const data = { business, coaches, programs };
-const preview = seoEnvironment({});
+const preview = seoEnvironment({ SITE_ENV: 'preview' });
 const production = seoEnvironment({ SITE_ENV: 'production', SITE_ORIGIN: productionOrigin });
 
 describe('SEO publishing policy', () => {
-  it('defaults to a crawlable but non-indexable preview', () => {
+  it('keeps alternate Workers hosts noindex without blocking the live host', () => {
+    const headers = headersFor(readFileSync(new URL('../public/_headers', import.meta.url), 'utf8'), production);
+    expect(headers).toContain('https://:version.:subdomain.workers.dev/*\n  X-Robots-Tag: noindex, nofollow');
+    expect(headers).not.toMatch(/^\/\*\n\s+X-Robots-Tag/m);
+  });
+  it('supports an explicit crawlable but non-indexable preview', () => {
     expect(pageHead(routes[0], data, preview)).toContain('content="noindex, nofollow"');
     expect(headersFor('', preview)).toContain('/*\n  X-Robots-Tag: noindex, nofollow');
     expect(robotsFor(preview)).not.toContain('Disallow: /');
   });
-  it('requires explicit production mode and the confirmed live origin', () => {
-    expect(() => seoEnvironment({ SITE_ENV: 'production' })).toThrow();
+  it('defaults to the launched domain and rejects another production origin', () => {
+    expect(seoEnvironment({})).toEqual(production);
+    expect(() => seoEnvironment({ SITE_ENV: 'production', SITE_ORIGIN: 'https://example.com' })).toThrow();
     expect(() => seoEnvironment({ SITE_ENV: 'prod' })).toThrow();
     expect(() => seoEnvironment({ SITE_ORIGIN: 'https://example.com/path' })).toThrow();
     expect(pageHead(routes[0], data, production)).toContain('index, follow, max-image-preview:large');
