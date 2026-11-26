@@ -29,7 +29,7 @@ Captured from the live browser on 2026-09-30. Sources: https://prxsjiujitsu.com/
 
 - Every email uses info@prxsjiujitsu.com. The old homepage contact label used this address but linked to praxisjjacademy@gmail.com.
 - Six independent pages, preserving existing homepage anchors and /praxis-classes/.
-- All schedule references share one dataset: Mon/Wed 6 PM Gi; Tue/Thu 5 PM kids, 6 PM beginners, 7 PM No-Gi; Fri 5 PM Kids No-Gi (starts November 6, 2026), 6 PM live training; Sat 11 AM all-level No-Gi.
+- All schedule references share one dataset: Mon/Wed 6 PM Gi; Tue/Thu 5 PM kids, 6 PM beginners, 7 PM No-Gi; Fri 5 PM Kids No-Gi, 6 PM live training; Sat 11 AM all-level No-Gi.
 - No invented prices, women's schedule, credentials or testimonials.
 
 ## Link inventory
@@ -54,4 +54,4 @@ Updated the homepage hero, academy and mission sections, values, program descrip
 
 ## October 30, 2026 schedule update
 
-Owner-confirmed: Kids No-Gi begins Friday, November 6, 2026, at 5 PM, recurring Fridays. Shared Home/Classes schedules, Home/Programs kids cards, and Programs/Classes kids details include the start date. Classes has a dedicated photo announcement immediately before Friday Live Training; the existing Friday 6 PM open training remains unchanged.
+Owner-confirmed: Kids No-Gi runs Fridays at 5 PM. As of November 25, 2026, the launch-date wording has been removed from shared Home/Classes schedules, Home/Programs kids cards, and Programs/Classes kids details now that the class is underway. Classes has a dedicated photo announcement immediately before Friday Live Training; the existing Friday 6 PM open training remains unchanged.

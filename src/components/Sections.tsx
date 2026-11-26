@@ -50,11 +50,10 @@ function KidsNoGiAnnouncement() {
   return <article className="kids-nogi-announcement" id="kids-no-gi">
     <Photo name={kidsNoGi.photo} alt={kidsNoGi.photoAlt} />
     <div>
-      <p className="eyebrow">New kids class</p>
+      <p className="eyebrow">Kids class</p>
       <h3>{kidsNoGi.name}</h3>
-      <p>Kids No-Gi is joining the weekly schedule at Praxis. Train without the traditional gi on Friday afternoons.</p>
+      <p>Kids No-Gi is part of the weekly schedule at Praxis. Train without the traditional gi on Friday afternoons.</p>
       <p className="detail-time">{timesFor(kidsNoGi.name)}</p>
-      <p>Starts <time dateTime={kidsNoGi.startsOn}>{startDateLabel(kidsNoGi.startsOn)}</time>.</p>
       <BookLink className="text-link" />
     </div>
   </article>;

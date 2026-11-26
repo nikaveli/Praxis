@@ -64,17 +64,18 @@ describe('migration acceptance', () => {
     expect(schedule[1].sessions.map(s=>s.time)).toEqual(['5:00 PM','6:00 PM','7:00 PM']);
     expect(schedule[5].sessions[0]).toMatchObject({name:'All Levels No-Gi',time:'11:00 AM'});
   });
-  it('announces Friday Kids No-Gi from November 6 without replacing existing classes', () => {
+  it('lists ongoing Friday Kids No-Gi without a start date or replacing existing classes', () => {
     expect(schedule.find(day => day.day === 'Friday')?.sessions).toEqual([
-      { name: 'Kids No-Gi', time: '5:00 PM', startsOn: '2026-11-06', kind: 'kids' },
+      { name: 'Kids No-Gi', time: '5:00 PM', kind: 'kids' },
       { name: 'Live Training', time: '6:00 PM', detail: 'All schools welcome', kind: 'open' },
     ]);
     for (const path of ['/', '/programs/', '/praxis-classes/']) {
       const doc = new DOMParser().parseFromString(renderToStaticMarkup(<App path={path} />), 'text/html');
-      expect(doc.body.textContent).toContain('Kids No-Gi starts November 6, 2026 — Fridays at 5:00 PM.');
+      expect(doc.body.textContent).toContain('Kids No-Gi — Fridays at 5:00 PM.');
+      expect(doc.body.textContent).not.toContain('November 6, 2026');
       if (path !== '/programs/') {
         const friday = Array.from(doc.querySelectorAll('.schedule-day')).find(day => day.querySelector('h3')?.textContent === 'Friday')!;
-        expect(friday.querySelector('time[datetime="2026-11-06"]')?.textContent).toBe('November 6, 2026');
+        expect(friday.querySelector('.session-start')).toBeNull();
         expect(friday.textContent).toContain('5:00 PMKids No-Gi');
         expect(friday.textContent).toContain('6:00 PMLive Training');
       }
